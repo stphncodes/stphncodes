@@ -9,7 +9,7 @@ import { TextReveal } from "@/components/animations/text-reveal";
 
 const codeLines = [
   { t: "const", n: " engineer ", o: "= {", c: "" },
-  { t: "  focus:", n: "", o: " ", c: '"AI · cloud · scale",' },
+  { t: "  focus:", n: "", o: " ", c: '"AI · web · scale",' },
   { t: "  loves:", n: "", o: " ", c: '"clean systems",' },
   { t: "  ships:", n: "", o: " ", c: "true," },
   { t: "}", n: "", o: "", c: "" },
@@ -35,14 +35,14 @@ export function About() {
             <p className="leading-relaxed text-muted-foreground">
               My work lives at the intersection of{" "}
               <span className="text-foreground">AI engineering</span>,{" "}
-              <span className="text-foreground">cloud infrastructure</span>, and{" "}
+              <span className="text-foreground">scalable systems</span>, and{" "}
               <span className="text-foreground">developer experience</span>. I care
               about the whole stack: from inference pipelines and vector search down
               to the pixels and micro-interactions users actually feel.
             </p>
             <p className="leading-relaxed text-muted-foreground">
-              When I&apos;m not shipping, I&apos;m exploring DevOps automation,
-              distributed systems, and the next wave of agentic tooling — always
+              When I&apos;m not shipping, I&apos;m exploring distributed systems,
+              language design, and the next wave of agentic tooling — always
               chasing the line between fast and elegant.
             </p>
 

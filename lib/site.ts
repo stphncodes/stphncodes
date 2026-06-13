@@ -9,7 +9,7 @@ export const siteConfig = {
   role: "Software Engineer",
   tagline: "Engineering intelligent, scalable systems.",
   description:
-    "STPHNCODES — Stephen is a software engineer specializing in AI engineering, cloud, and scalable systems. Building with Python, JavaScript, Next.js, React, and Node.js.",
+    "STPHNCODES — Stephen is a software engineer specializing in AI engineering, full-stack development, and scalable systems. Building with Python, JavaScript, Next.js, React, and Node.js.",
   url: "https://stphncodes.dev",
   email: "joshuamadu4@gmail.com",
   location: "Remote / Worldwide",
@@ -23,8 +23,8 @@ export const siteConfig = {
     "React",
     "Node.js",
     "Python",
-    "Cloud",
-    "DevOps",
+    "Full-Stack",
+    "TypeScript",
     "Portfolio",
   ],
 } as const;

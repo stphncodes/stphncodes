@@ -91,7 +91,7 @@ export function TechStack() {
         />
 
         <Reveal direction="none" className="mt-16 flex justify-center">
-          <div className="relative flex aspect-square w-full max-w-[600px] scale-[0.62] items-center justify-center sm:scale-90 lg:scale-100">
+          <div className="relative flex aspect-square w-full max-w-[600px] scale-[0.5] items-center justify-center min-[480px]:scale-[0.62] sm:scale-90 lg:scale-100">
             {/* Center core */}
             <div className="relative z-10 flex h-28 w-28 flex-col items-center justify-center rounded-full">
               <div className="absolute inset-0 animate-pulse-glow rounded-full bg-primary/30 blur-2xl" />

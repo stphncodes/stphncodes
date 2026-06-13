@@ -55,7 +55,7 @@ export function Footer() {
           </div>
 
           {/* Links */}
-          <div className="flex gap-16">
+          <div className="flex gap-10 sm:gap-16">
             <nav className="flex flex-col gap-3">
               <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground/70">
                 Navigate

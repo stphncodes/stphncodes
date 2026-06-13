@@ -27,6 +27,9 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
       touchMultiplier: 1.6,
     });
 
+    // Expose the instance so UI (e.g. the mobile menu) can lock/unlock scroll.
+    (window as Window & { lenis?: Lenis }).lenis = lenis;
+
     // Drive Lenis from GSAP's ticker for a single, synchronized RAF loop.
     lenis.on("scroll", ScrollTrigger.update);
 
@@ -60,6 +63,7 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
       document.removeEventListener("click", handleAnchorClick);
       gsap.ticker.remove(onRaf);
       lenis.destroy();
+      delete (window as Window & { lenis?: Lenis }).lenis;
     };
   }, []);
 

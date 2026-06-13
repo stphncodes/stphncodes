@@ -107,7 +107,7 @@ export function Hero() {
           <span className="font-medium text-foreground">{siteConfig.role}</span>{" "}
           crafting intelligent, scalable systems — from{" "}
           <span className="text-foreground">AI engineering</span> to{" "}
-          <span className="text-foreground">cloud-native</span> infrastructure.
+          <span className="text-foreground">full-stack</span> products.
         </p>
 
         {/* CTAs */}

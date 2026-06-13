@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import type Lenis from "lenis";
 
 import { navLinks, siteConfig } from "@/lib/site";
 import { useActiveSection } from "@/hooks/use-active-section";
@@ -21,6 +22,37 @@ export function Navbar() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 24);
   });
+
+  // When the mobile menu is open: lock page scroll (Lenis-aware), close on
+  // Escape, and auto-close once the viewport reaches the desktop breakpoint
+  // so we never leave scroll locked behind a hidden menu.
+  useEffect(() => {
+    const lenis = (window as Window & { lenis?: Lenis }).lenis;
+
+    if (open) {
+      lenis?.stop();
+      document.body.style.overflow = "hidden";
+    } else {
+      lenis?.start();
+      document.body.style.overflow = "";
+    }
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const onBreakpoint = () => desktop.matches && setOpen(false);
+
+    document.addEventListener("keydown", onKeyDown);
+    desktop.addEventListener("change", onBreakpoint);
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      desktop.removeEventListener("change", onBreakpoint);
+      lenis?.start();
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
     <motion.header
@@ -100,14 +132,27 @@ export function Navbar() {
       {/* Mobile menu */}
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.25 }}
-            className="absolute left-4 right-4 top-20 z-40 md:hidden"
-          >
-            <ul className="glass-strong flex flex-col gap-1 rounded-2xl p-3">
+          <>
+            {/* Tap-outside backdrop */}
+            <motion.button
+              type="button"
+              aria-label="Close menu"
+              tabIndex={-1}
+              onClick={() => setOpen(false)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 -z-10 cursor-default bg-background/60 backdrop-blur-sm md:hidden"
+            />
+            <motion.div
+              initial={{ opacity: 0, y: -12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.25 }}
+              className="absolute left-4 right-4 top-[4.75rem] z-40 md:hidden"
+            >
+              <ul className="glass-strong flex flex-col gap-1 rounded-2xl p-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
@@ -126,8 +171,9 @@ export function Navbar() {
                   </a>
                 </Button>
               </li>
-            </ul>
-          </motion.div>
+              </ul>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </motion.header>

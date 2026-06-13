@@ -76,8 +76,8 @@ const jsonLd = {
   description: siteConfig.description,
   knowsAbout: [
     "AI Engineering",
-    "Cloud Architecture",
-    "DevOps",
+    "Full-Stack Development",
+    "Web Performance",
     "Scalable Systems",
     "Next.js",
     "React",

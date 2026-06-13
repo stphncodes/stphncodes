@@ -22,9 +22,9 @@ export const techStack: TechItem[] = [
   { name: "FastAPI", ring: 1, color: "#14b8a6", category: "framework" },
   { name: "PyTorch", ring: 2, color: "#f97316", category: "ai" },
   { name: "LangChain", ring: 2, color: "#a855f7", category: "ai" },
-  { name: "AWS", ring: 2, color: "#fb923c", category: "platform" },
-  { name: "Docker", ring: 2, color: "#38bdf8", category: "platform" },
-  { name: "Kubernetes", ring: 2, color: "#6366f1", category: "platform" },
+  { name: "PostgreSQL", ring: 2, color: "#38bdf8", category: "platform" },
+  { name: "Redis", ring: 2, color: "#ef4444", category: "platform" },
+  { name: "GraphQL", ring: 2, color: "#ec4899", category: "platform" },
 ];
 
 export interface Project {
@@ -48,19 +48,19 @@ export const projects: Project[] = [
     year: "2025",
     description:
       "A production RAG platform that turns private knowledge bases into low-latency conversational agents. Streaming responses, vector caching, and evals baked in.",
-    tags: ["Next.js", "LangChain", "PostgreSQL", "pgvector", "AWS"],
+    tags: ["Next.js", "LangChain", "PostgreSQL", "pgvector", "Redis"],
     href: "#",
     featured: true,
     gradient: "from-violet-500/30 via-fuchsia-500/10 to-transparent",
   },
   {
-    id: "orbit",
-    title: "Orbit",
-    category: "DevOps Tooling",
+    id: "atlas",
+    title: "Atlas",
+    category: "Developer Tooling",
     year: "2024",
     description:
-      "A self-serve internal platform that provisions ephemeral cloud environments per pull request — cutting QA cycles from hours to minutes.",
-    tags: ["Kubernetes", "Go", "Terraform", "GitHub Actions"],
+      "A code-intelligence engine that maps large TypeScript codebases into a queryable graph — powering instant refactors and semantic search across millions of lines.",
+    tags: ["TypeScript", "Node.js", "tree-sitter", "GraphQL"],
     href: "#",
     featured: true,
     gradient: "from-cyan-500/30 via-sky-500/10 to-transparent",
@@ -100,7 +100,7 @@ export interface ExperienceItem {
 export const experience: ExperienceItem[] = [
   {
     role: "Senior Software Engineer",
-    company: "Cloud-Native AI Startup",
+    company: "AI Product Startup",
     period: "2024 — Present",
     description:
       "Leading the design of an LLM orchestration layer serving high-throughput inference for enterprise customers.",
@@ -119,7 +119,7 @@ export const experience: ExperienceItem[] = [
     highlights: [
       "Shipped a realtime dashboard used by 50k+ daily users",
       "Drove migration to a typed, modular Next.js monorepo",
-      "Reduced cloud spend 24% through infra right-sizing",
+      "Cut API response times 40% through query and caching optimization",
     ],
   },
   {
@@ -130,7 +130,7 @@ export const experience: ExperienceItem[] = [
       "Delivered web platforms for startups and brands across the product lifecycle, from prototype to launch.",
     highlights: [
       "Launched 12+ production web apps end-to-end",
-      "Introduced CI/CD pipelines and automated testing culture",
+      "Established a rigorous automated testing and code-review culture",
       "Specialized in performance and accessible, polished UI",
     ],
   },

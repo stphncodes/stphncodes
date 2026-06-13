@@ -75,7 +75,7 @@ export function Projects() {
           <SectionHeading
             eyebrow="03 — Work"
             title="Selected projects"
-            description="A few systems I've designed and shipped — spanning AI platforms, developer tooling, and realtime infrastructure."
+            description="A few systems I've designed and shipped — spanning AI platforms, developer tooling, and realtime systems."
             className="max-w-2xl"
           />
         </div>
