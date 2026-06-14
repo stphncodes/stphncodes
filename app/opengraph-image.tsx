@@ -82,7 +82,7 @@ export default function OpengraphImage() {
               "-webkit-background-clip": "text",
             }}
           >
-            {siteConfig.author} James
+            {`${siteConfig.author} James`}
           </div>
           <div
             style={{

@@ -28,7 +28,9 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     });
 
     // Expose the instance so UI (e.g. the mobile menu) can lock/unlock scroll.
-    (window as Window & { lenis?: Lenis }).lenis = lenis;
+    // Cast through `unknown` because lenis globally augments `Window.lenis`
+    // with its own debug shape, which doesn't overlap with the Lenis instance.
+    (window as unknown as { lenis?: Lenis }).lenis = lenis;
 
     // Drive Lenis from GSAP's ticker for a single, synchronized RAF loop.
     lenis.on("scroll", ScrollTrigger.update);
@@ -63,7 +65,7 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
       document.removeEventListener("click", handleAnchorClick);
       gsap.ticker.remove(onRaf);
       lenis.destroy();
-      delete (window as Window & { lenis?: Lenis }).lenis;
+      delete (window as unknown as { lenis?: Lenis }).lenis;
     };
   }, []);
 

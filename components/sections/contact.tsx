@@ -11,6 +11,9 @@ import { cn } from "@/lib/utils";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
+/** Public Web3Forms access key — safe to expose client-side. Set in .env.local. */
+const WEB3FORMS_ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
 const BOOT_LINES = [
   "$ ssh guest@stphncodes.dev",
   "Authenticating… ✓ access granted",
@@ -53,10 +56,28 @@ export function Contact() {
     setStatus("sending");
 
     try {
-      // Replace this block with a real POST to your API / form service.
-      await new Promise((res) => setTimeout(res, 1200));
-      setStatus("sent");
-      setForm({ name: "", email: "", message: "" });
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          subject: `New message from ${form.name} — STPHNCODES`,
+          from_name: "STPHNCODES Portfolio",
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus("sent");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }

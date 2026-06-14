@@ -9,15 +9,31 @@ export const siteConfig = {
   role: "Software Engineer",
   tagline: "Building the web, automating the rest.",
   description:
-    "STPHNCODES — Stephen is a software engineer specializing in full-stack web development, automation, and agentic AI. Building with JavaScript, TypeScript, Python, Next.js, React, and Vite.",
+    "STPHNCODES — Stephen James is a software engineer in Abuja, Nigeria, available worldwide. Specializing in full-stack web development, automation, and agentic AI with Next.js, React, Python, and TypeScript. Available for projects, contracts, and collaboration.",
   url: "https://www.cloudwithstephen.com",
   email: "stphncodes@gmail.com",
-  location: "Remote / Worldwide",
+  location: "Abuja, Nigeria",
+  // Structured geo — single source for geo meta tags + JSON-LD address.
+  // Region code is ISO 3166-2 (NG-FC = Federal Capital Territory); position is lat;long.
+  geo: {
+    locality: "Abuja",
+    region: "Federal Capital Territory",
+    regionCode: "NG-FC",
+    country: "Nigeria",
+    countryCode: "NG",
+    position: "9.0765;7.3986",
+  },
   keywords: [
     "Stephen",
+    "Stephen James",
     "STPHNCODES",
     "Software Engineer",
-    "Web Developer",
+    "Software Engineer Nigeria",
+    "Software Developer Abuja",
+    "Web Developer Nigeria",
+    "Web Developer Abuja",
+    "Hire Developer Nigeria",
+    "Freelance Developer Nigeria",
     "Automation",
     "Agentic AI",
     "AI Agents",
@@ -28,6 +44,8 @@ export const siteConfig = {
     "Python",
     "Full-Stack",
     "TypeScript",
+    "Nigeria",
+    "Abuja",
     "Portfolio",
   ],
 } as const;

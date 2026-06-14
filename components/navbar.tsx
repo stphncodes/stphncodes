@@ -27,7 +27,7 @@ export function Navbar() {
   // Escape, and auto-close once the viewport reaches the desktop breakpoint
   // so we never leave scroll locked behind a hidden menu.
   useEffect(() => {
-    const lenis = (window as Window & { lenis?: Lenis }).lenis;
+    const lenis = (window as unknown as { lenis?: Lenis }).lenis;
 
     if (open) {
       lenis?.stop();

@@ -37,9 +37,16 @@ export const metadata: Metadata = {
   applicationName: siteConfig.name,
   category: "technology",
   alternates: { canonical: "/" },
+  // Geo meta tags — help local/regional discovery (Abuja, Nigeria).
+  other: {
+    "geo.region": siteConfig.geo.regionCode,
+    "geo.placename": siteConfig.geo.locality,
+    "geo.position": siteConfig.geo.position,
+    ICBM: siteConfig.geo.position.replace(";", ", "),
+  },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_NG",
     url: siteConfig.url,
     title: `${siteConfig.name} — ${siteConfig.author}`,
     description: siteConfig.description,
@@ -79,12 +86,27 @@ export const viewport: Viewport = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: siteConfig.author,
+  name: `${siteConfig.author} James`,
   alternateName: siteConfig.name,
   url: siteConfig.url,
   email: siteConfig.email,
   jobTitle: siteConfig.role,
   description: siteConfig.description,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: siteConfig.geo.locality,
+    addressRegion: siteConfig.geo.region,
+    addressCountry: siteConfig.geo.countryCode,
+  },
+  // Anchored in Nigeria, open to clients worldwide.
+  homeLocation: {
+    "@type": "Place",
+    name: siteConfig.location,
+  },
+  areaServed: [
+    { "@type": "Country", name: "Nigeria" },
+    "Worldwide",
+  ],
   knowsAbout: [
     "Full-Stack Web Development",
     "Automation",
