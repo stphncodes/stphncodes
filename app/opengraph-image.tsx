@@ -2,8 +2,8 @@ import { ImageResponse } from "next/og";
 
 import { siteConfig } from "@/lib/site";
 
-// Static social card rendered at build time via Satori.
-export const runtime = "edge";
+// Social card rendered via Satori. Node runtime (default) — more reliable on
+// Vercel's build than the edge runtime, and avoids the re-exported-runtime warning.
 export const alt = `${siteConfig.name} — ${siteConfig.author}, ${siteConfig.role}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
