@@ -93,17 +93,6 @@ export const projects: Project[] = [
     href: "#",
     gradient: "from-emerald-500/30 via-teal-500/10 to-transparent",
   },
-  {
-    id: "forge",
-    title: "Forge",
-    category: "Developer Experience",
-    year: "2023",
-    description:
-      "An AI pair-programmer extension that scaffolds typed APIs from natural language and auto-generates tests against the contract.",
-    tags: ["TypeScript", "Python", "FastAPI", "OpenAI"],
-    href: "#",
-    gradient: "from-orange-500/30 via-amber-500/10 to-transparent",
-  },
 ];
 
 export interface ExperienceItem {
@@ -121,7 +110,7 @@ export const experience: ExperienceItem[] = [
     role: "Software Engineer",
     company: "Activetechconsult",
     companyHref: "https://activetechconsult.com/",
-    period: "2024 — Present",
+    period: "2025 — Present",
     description:
       "Building Toyota Nigeria's certified pre-owned cars platform — an e-commerce marketplace for inspected Toyota vehicles and genuine parts.",
     highlights: [
@@ -133,7 +122,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Full-Stack Engineer",
     company: "FinTech Scale-up",
-    period: "2022 — 2024",
+    period: "2024 — 2025",
     description:
       "Built customer-facing products and the internal tooling that powered a 5x growth in active users.",
     highlights: [
@@ -145,7 +134,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Software Engineer",
     company: "Digital Product Studio",
-    period: "2020 — 2022",
+    period: "2023 — 2024",
     description:
       "Delivered web platforms for startups and brands across the product lifecycle, from prototype to launch.",
     highlights: [
