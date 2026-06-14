@@ -11,7 +11,7 @@ export const siteConfig = {
   description:
     "STPHNCODES — Stephen is a software engineer specializing in full-stack web development, automation, and agentic AI. Building with JavaScript, TypeScript, Python, Next.js, React, and Vite.",
   url: "https://www.cloudwithstephen.com",
-  email: "joshuamadu4@gmail.com",
+  email: "stphncodes@gmail.com",
   location: "Remote / Worldwide",
   keywords: [
     "Stephen",
@@ -44,5 +44,5 @@ export const socialLinks = [
   { label: "GitHub", href: "https://github.com", handle: "@stphncodes", icon: "github" },
   { label: "X", href: "https://x.com", handle: "@stphncodes", icon: "twitter" },
   { label: "LinkedIn", href: "https://linkedin.com", handle: "in/stphncodes", icon: "linkedin" },
-  { label: "Email", href: "mailto:joshuamadu4@gmail.com", handle: "joshuamadu4@gmail.com", icon: "mail" },
+  { label: "Email", href: "mailto:stphncodes@gmail.com", handle: "stphncodes@gmail.com", icon: "mail" },
 ] as const;

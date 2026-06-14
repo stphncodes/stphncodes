@@ -1,113 +1,82 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { IconType } from "react-icons";
+import {
+  SiPython,
+  SiJavascript,
+  SiTypescript,
+  SiNextdotjs,
+  SiReact,
+  SiVite,
+  SiNodedotjs,
+  SiFastapi,
+  SiLangchain,
+  SiLanggraph,
+  SiOpenai,
+  SiN8N,
+  SiPostgresql,
+  SiRedis,
+  SiGraphql,
+} from "react-icons/si";
 
-import { techStack, type TechItem } from "@/lib/data";
+import { techStack } from "@/lib/data";
 import { SectionHeading } from "@/components/section-heading";
 import { Reveal } from "@/components/animations/reveal";
 
-// Ordered category groups → rendered as labeled bento panels.
-const GROUPS: { key: TechItem["category"]; label: string; accent: string }[] = [
-  { key: "language", label: "Languages", accent: "#0ea5e9" },
-  { key: "framework", label: "Frameworks", accent: "#22d3ee" },
-  { key: "ai", label: "Agentic AI", accent: "#a855f7" },
-  { key: "platform", label: "Platforms", accent: "#fb923c" },
-];
+// Real brand logo + official brand color per tech. Dark-on-black brands
+// (Next.js, LangChain, OpenAI…) are mapped to white so they read on the dark UI.
+const ICONS: Record<string, { Icon: IconType; brand: string }> = {
+  Python: { Icon: SiPython, brand: "#3776AB" },
+  JavaScript: { Icon: SiJavascript, brand: "#F7DF1E" },
+  TypeScript: { Icon: SiTypescript, brand: "#3178C6" },
+  "Next.js": { Icon: SiNextdotjs, brand: "#ffffff" },
+  React: { Icon: SiReact, brand: "#61DAFB" },
+  Vite: { Icon: SiVite, brand: "#646CFF" },
+  "Node.js": { Icon: SiNodedotjs, brand: "#5FA04E" },
+  FastAPI: { Icon: SiFastapi, brand: "#009688" },
+  LangChain: { Icon: SiLangchain, brand: "#ffffff" },
+  LangGraph: { Icon: SiLanggraph, brand: "#ffffff" },
+  OpenAI: { Icon: SiOpenai, brand: "#ffffff" },
+  n8n: { Icon: SiN8N, brand: "#EA4B71" },
+  PostgreSQL: { Icon: SiPostgresql, brand: "#4169E1" },
+  Redis: { Icon: SiRedis, brand: "#FF4438" },
+  GraphQL: { Icon: SiGraphql, brand: "#E10098" },
+};
 
-function TechCard({ item, index }: { item: TechItem; index: number }) {
+function TechLogo({ name, index }: { name: string; index: number }) {
+  const entry = ICONS[name];
+  if (!entry) return null;
+  const { Icon, brand } = entry;
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 16, scale: 0.96 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay: index * 0.05, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={{ duration: 0.45, delay: index * 0.035, ease: [0.21, 0.47, 0.32, 0.98] }}
       whileHover={{ y: -4 }}
-      className="group/card relative flex items-center gap-3 overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 backdrop-blur-sm transition-colors duration-300 hover:border-white/20"
-      style={{ ["--accent" as string]: item.color }}
+      className="group/logo relative flex aspect-square flex-col items-center justify-center gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-sm transition-colors duration-300 hover:border-white/20"
+      style={{ ["--brand" as string]: brand }}
     >
-      {/* Accent glow that blooms on hover */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition-opacity duration-300 group-hover/card:opacity-100"
-        style={{
-          background: `radial-gradient(120px 80px at 0% 50%, ${item.color}22, transparent 70%)`,
-        }}
-      />
-
-      {/* Status dot with its own glow */}
-      <span className="relative flex h-2.5 w-2.5 shrink-0">
-        <span
-          className="absolute inline-flex h-full w-full rounded-full opacity-60 blur-[3px] transition-opacity duration-300 group-hover/card:opacity-100"
-          style={{ backgroundColor: item.color }}
-        />
-        <span
-          className="relative inline-flex h-2.5 w-2.5 rounded-full"
-          style={{ backgroundColor: item.color }}
-        />
-      </span>
-
-      <span className="relative text-sm font-medium text-foreground/90 transition-colors duration-300 group-hover/card:text-foreground">
-        {item.name}
-      </span>
-
-      {/* Left accent bar slides in on hover */}
+      {/* Brand glow that blooms on hover */}
       <span
         aria-hidden
-        className="absolute left-0 top-1/2 h-0 w-[3px] -translate-y-1/2 rounded-full transition-all duration-300 group-hover/card:h-2/3"
-        style={{ backgroundColor: item.color }}
+        className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover/logo:opacity-100"
+        style={{ boxShadow: `inset 0 0 40px -16px ${brand}, 0 0 32px -10px ${brand}` }}
       />
+
+      {/* Grayscale by default → brand color on hover */}
+      <Icon className="h-9 w-9 text-foreground/35 transition-colors duration-300 group-hover/logo:[color:var(--brand)] sm:h-10 sm:w-10" />
+
+      <span className="text-xs font-medium text-muted-foreground transition-colors duration-300 group-hover/logo:text-foreground">
+        {name}
+      </span>
     </motion.div>
   );
 }
 
-function GroupPanel({
-  label,
-  accent,
-  items,
-}: {
-  label: string;
-  accent: string;
-  items: TechItem[];
-}) {
-  return (
-    <div className="group/panel relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-5 backdrop-blur-md sm:p-6">
-      {/* Panel ambient glow */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full opacity-30 blur-3xl transition-opacity duration-500 group-hover/panel:opacity-60"
-        style={{ backgroundColor: accent }}
-      />
-
-      <div className="relative mb-4 flex items-center justify-between">
-        <div className="flex items-center gap-2.5">
-          <span
-            className="h-2 w-2 rounded-full"
-            style={{ backgroundColor: accent }}
-          />
-          <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-foreground/80">
-            {label}
-          </h3>
-        </div>
-        <span className="font-mono text-[11px] text-muted-foreground">
-          {String(items.length).padStart(2, "0")}
-        </span>
-      </div>
-
-      <div className="relative grid grid-cols-2 gap-2.5">
-        {items.map((item, i) => (
-          <TechCard key={item.name} item={item} index={i} />
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export function TechStack() {
-  const groups = GROUPS.map((g) => ({
-    ...g,
-    items: techStack.filter((t) => t.category === g.key),
-  })).filter((g) => g.items.length > 0);
-
   return (
     <section id="stack" className="relative py-28 sm:py-36">
       <div className="container">
@@ -120,14 +89,9 @@ export function TechStack() {
         />
 
         <Reveal direction="up" className="mt-16">
-          <div className="grid gap-5 sm:grid-cols-2">
-            {groups.map((g) => (
-              <GroupPanel
-                key={g.key}
-                label={g.label}
-                accent={g.accent}
-                items={g.items}
-              />
+          <div className="mx-auto grid max-w-4xl grid-cols-3 gap-3 sm:grid-cols-4 sm:gap-4 md:grid-cols-5">
+            {techStack.map((item, i) => (
+              <TechLogo key={item.name} name={item.name} index={i} />
             ))}
           </div>
         </Reveal>
