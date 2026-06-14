@@ -151,3 +151,131 @@ export const stats = [
   { value: "10k", label: "Req/s at peak" },
   { value: "∞", label: "Curiosity" },
 ] as const;
+
+export interface Service {
+  title: string;
+  tagline: string;
+  /** What the engagement includes. */
+  includes: string[];
+  /** Lucide icon key resolved in the Services section. */
+  icon: "globe" | "bot" | "layers";
+  /** Tailwind gradient classes used for the card's signature glow. */
+  gradient: string;
+  /** The standout offer — gets an accent ring + label. */
+  featured?: boolean;
+}
+
+export const services: Service[] = [
+  {
+    title: "Business Website",
+    tagline: "Fast, modern, mobile-first website built for conversions.",
+    includes: ["Design", "Development", "Deployment", "Basic SEO"],
+    icon: "globe",
+    gradient: "from-cyan-500/30 via-sky-500/10 to-transparent",
+  },
+  {
+    title: "AI Agent",
+    tagline:
+      "A custom AI agent that handles leads, bookings, or customer support — automatically.",
+    includes: [
+      "Claude API integration",
+      "Chat / form interface",
+      "Business logic setup",
+    ],
+    icon: "bot",
+    gradient: "from-violet-500/30 via-fuchsia-500/10 to-transparent",
+  },
+  {
+    title: "Website + AI Bundle",
+    tagline:
+      "The full package. A professional site with an AI agent built in — ready to grow your business.",
+    includes: ["Everything above", "Priority support"],
+    icon: "layers",
+    gradient: "from-emerald-500/30 via-teal-500/10 to-transparent",
+    featured: true,
+  },
+];
+
+export interface PricingTier {
+  name: string;
+  /** Display price, e.g. "$300" or "$2,500+". */
+  price: string;
+  /** One-line summary of what the tier delivers. */
+  summary: string;
+  features: string[];
+  cta: { label: string; href: string };
+  /** Highlighted as the recommended plan. */
+  popular?: boolean;
+}
+
+export const pricing: PricingTier[] = [
+  {
+    name: "Starter",
+    price: "$300",
+    summary: "Business website only",
+    features: [
+      "Up to 5 pages",
+      "Mobile responsive",
+      "Contact form",
+      "Deployed & live",
+    ],
+    cta: { label: "Get started", href: "#contact" },
+  },
+  {
+    name: "Growth",
+    price: "$1,000",
+    summary: "Website + AI Agent",
+    features: [
+      "Lead capture or FAQ bot",
+      "Claude API powered",
+      "Integrated into your site",
+    ],
+    cta: { label: "Get started", href: "#contact" },
+    popular: true,
+  },
+  {
+    name: "Premium",
+    price: "$2,500+",
+    summary: "Full automation stack",
+    features: [
+      "Custom AI workflows",
+      "CRM integration",
+      "Ongoing support",
+    ],
+    cta: { label: "Let's talk", href: "#contact" },
+  },
+];
+
+export interface Testimonial {
+  name: string;
+  /** Business or role, e.g. "Founder, Acme Co.". */
+  role: string;
+  quote: string;
+  /** Initials shown in the avatar circle. */
+  initials: string;
+}
+
+// Mock testimonials — sample content for layout. Swap in real client quotes when available.
+export const testimonials: Testimonial[] = [
+  {
+    name: "Adaeze Okonkwo",
+    role: "Founder, Lumina Skincare",
+    quote:
+      "Stephen rebuilt our site and it loads instantly on mobile — online orders jumped 40% in the first month. He just gets what a small business actually needs.",
+    initials: "AO",
+  },
+  {
+    name: "Daniel Mensah",
+    role: "Owner, BrightPath Tutors",
+    quote:
+      "The AI agent he built handles enquiries and books trial lessons around the clock. It feels like we hired a full-time receptionist for a fraction of the cost.",
+    initials: "DM",
+  },
+  {
+    name: "Sarah Whitfield",
+    role: "Director, Northwind Logistics",
+    quote:
+      "Clear communication, fast delivery, and the website plus AI bundle paid for itself. We capture leads automatically now instead of losing them after hours.",
+    initials: "SW",
+  },
+];
