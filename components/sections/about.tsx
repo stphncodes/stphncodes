@@ -34,10 +34,10 @@ export function About() {
             </p>
             <p className="leading-relaxed text-muted-foreground">
               My work lives at the intersection of{" "}
-              <span className="text-foreground">AI engineering</span>,{" "}
-              <span className="text-foreground">scalable systems</span>, and{" "}
-              <span className="text-foreground">developer experience</span>. I care
-              about the whole stack: from inference pipelines and vector search down
+              <span className="text-foreground">web development</span>,{" "}
+              <span className="text-foreground">automation</span>, and{" "}
+              <span className="text-foreground">agentic AI</span>. I care
+              about the whole stack: from AI agents and automated workflows down
               to the pixels and micro-interactions users actually feel.
             </p>
             <p className="leading-relaxed text-muted-foreground">

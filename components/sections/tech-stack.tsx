@@ -5,79 +5,108 @@ import { motion } from "framer-motion";
 import { techStack, type TechItem } from "@/lib/data";
 import { SectionHeading } from "@/components/section-heading";
 import { Reveal } from "@/components/animations/reveal";
-import { cn } from "@/lib/utils";
 
-// Visual config per orbit ring: radius (px), spin duration (s), direction.
-const RINGS = [
-  { radius: 96, duration: 26, reverse: false },
-  { radius: 176, duration: 38, reverse: true },
-  { radius: 256, duration: 54, reverse: false },
+// Ordered category groups → rendered as labeled bento panels.
+const GROUPS: { key: TechItem["category"]; label: string; accent: string }[] = [
+  { key: "language", label: "Languages", accent: "#0ea5e9" },
+  { key: "framework", label: "Frameworks", accent: "#22d3ee" },
+  { key: "ai", label: "Agentic AI", accent: "#a855f7" },
+  { key: "platform", label: "Platforms", accent: "#fb923c" },
 ];
 
-function OrbitRing({ index, items }: { index: number; items: TechItem[] }) {
-  const ring = RINGS[index];
-  if (!ring) return null;
-
+function TechCard({ item, index }: { item: TechItem; index: number }) {
   return (
-    <>
-      {/* Dashed guide circle */}
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.5, delay: index * 0.05, ease: [0.21, 0.47, 0.32, 0.98] }}
+      whileHover={{ y: -4 }}
+      className="group/card relative flex items-center gap-3 overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 backdrop-blur-sm transition-colors duration-300 hover:border-white/20"
+      style={{ ["--accent" as string]: item.color }}
+    >
+      {/* Accent glow that blooms on hover */}
       <div
         aria-hidden
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/10"
-        style={{ width: ring.radius * 2, height: ring.radius * 2 }}
+        className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition-opacity duration-300 group-hover/card:opacity-100"
+        style={{
+          background: `radial-gradient(120px 80px at 0% 50%, ${item.color}22, transparent 70%)`,
+        }}
       />
 
-      {/* Rotating layer */}
+      {/* Status dot with its own glow */}
+      <span className="relative flex h-2.5 w-2.5 shrink-0">
+        <span
+          className="absolute inline-flex h-full w-full rounded-full opacity-60 blur-[3px] transition-opacity duration-300 group-hover/card:opacity-100"
+          style={{ backgroundColor: item.color }}
+        />
+        <span
+          className="relative inline-flex h-2.5 w-2.5 rounded-full"
+          style={{ backgroundColor: item.color }}
+        />
+      </span>
+
+      <span className="relative text-sm font-medium text-foreground/90 transition-colors duration-300 group-hover/card:text-foreground">
+        {item.name}
+      </span>
+
+      {/* Left accent bar slides in on hover */}
+      <span
+        aria-hidden
+        className="absolute left-0 top-1/2 h-0 w-[3px] -translate-y-1/2 rounded-full transition-all duration-300 group-hover/card:h-2/3"
+        style={{ backgroundColor: item.color }}
+      />
+    </motion.div>
+  );
+}
+
+function GroupPanel({
+  label,
+  accent,
+  items,
+}: {
+  label: string;
+  accent: string;
+  items: TechItem[];
+}) {
+  return (
+    <div className="group/panel relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-5 backdrop-blur-md sm:p-6">
+      {/* Panel ambient glow */}
       <div
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin-slow"
-        style={{
-          width: ring.radius * 2,
-          height: ring.radius * 2,
-          animationDuration: `${ring.duration}s`,
-          animationDirection: ring.reverse ? "reverse" : "normal",
-        }}
-      >
-        {items.map((item, i) => {
-          const angle = (i / items.length) * Math.PI * 2;
-          const x = Math.cos(angle) * ring.radius;
-          const y = Math.sin(angle) * ring.radius;
-          return (
-            <div
-              key={item.name}
-              className="absolute left-1/2 top-1/2"
-              style={{ transform: `translate(${x}px, ${y}px)` }}
-            >
-              {/* Counter-rotate so chips stay upright */}
-              <div
-                className="animate-spin-slow"
-                style={{
-                  animationDuration: `${ring.duration}s`,
-                  animationDirection: ring.reverse ? "normal" : "reverse",
-                }}
-              >
-                <div
-                  className="group/chip flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 rounded-full border border-white/10 bg-background/70 px-3 py-1.5 backdrop-blur-md transition-transform duration-300 hover:scale-110"
-                  style={{ boxShadow: `0 0 24px -8px ${item.color}` }}
-                >
-                  <span
-                    className="h-2 w-2 rounded-full"
-                    style={{ backgroundColor: item.color }}
-                  />
-                  <span className="whitespace-nowrap text-xs font-medium text-foreground/90">
-                    {item.name}
-                  </span>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+        aria-hidden
+        className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full opacity-30 blur-3xl transition-opacity duration-500 group-hover/panel:opacity-60"
+        style={{ backgroundColor: accent }}
+      />
+
+      <div className="relative mb-4 flex items-center justify-between">
+        <div className="flex items-center gap-2.5">
+          <span
+            className="h-2 w-2 rounded-full"
+            style={{ backgroundColor: accent }}
+          />
+          <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-foreground/80">
+            {label}
+          </h3>
+        </div>
+        <span className="font-mono text-[11px] text-muted-foreground">
+          {String(items.length).padStart(2, "0")}
+        </span>
       </div>
-    </>
+
+      <div className="relative grid grid-cols-2 gap-2.5">
+        {items.map((item, i) => (
+          <TechCard key={item.name} item={item} index={i} />
+        ))}
+      </div>
+    </div>
   );
 }
 
 export function TechStack() {
-  const byRing = [0, 1, 2].map((r) => techStack.filter((t) => t.ring === r));
+  const groups = GROUPS.map((g) => ({
+    ...g,
+    items: techStack.filter((t) => t.category === g.key),
+  })).filter((g) => g.items.length > 0);
 
   return (
     <section id="stack" className="relative py-28 sm:py-36">
@@ -90,46 +119,18 @@ export function TechStack() {
           className="mx-auto"
         />
 
-        <Reveal direction="none" className="mt-16 flex justify-center">
-          <div className="relative flex aspect-square w-full max-w-[600px] scale-[0.5] items-center justify-center min-[480px]:scale-[0.62] sm:scale-90 lg:scale-100">
-            {/* Center core */}
-            <div className="relative z-10 flex h-28 w-28 flex-col items-center justify-center rounded-full">
-              <div className="absolute inset-0 animate-pulse-glow rounded-full bg-primary/30 blur-2xl" />
-              <div className="glass-strong relative flex h-full w-full flex-col items-center justify-center rounded-full text-center shadow-glow">
-                <span className="font-display text-lg font-bold text-gradient-primary">
-                  STPHN
-                </span>
-                <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                  core
-                </span>
-              </div>
-            </div>
-
-            {byRing.map((items, i) => (
-              <OrbitRing key={i} index={i} items={items} />
+        <Reveal direction="up" className="mt-16">
+          <div className="grid gap-5 sm:grid-cols-2">
+            {groups.map((g) => (
+              <GroupPanel
+                key={g.key}
+                label={g.label}
+                accent={g.accent}
+                items={g.items}
+              />
             ))}
           </div>
         </Reveal>
-
-        {/* Legend */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
-          {(
-            [
-              { label: "Languages", color: "#3b82f6" },
-              { label: "Frameworks", color: "#22d3ee" },
-              { label: "AI / ML", color: "#a855f7" },
-              { label: "Platforms", color: "#fb923c" },
-            ] as const
-          ).map((l) => (
-            <span key={l.label} className="inline-flex items-center gap-2">
-              <span
-                className={cn("h-2 w-2 rounded-full")}
-                style={{ backgroundColor: l.color }}
-              />
-              {l.label}
-            </span>
-          ))}
-        </div>
       </div>
     </section>
   );

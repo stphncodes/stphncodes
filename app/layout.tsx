@@ -54,7 +54,18 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  // Set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION in your env (Vercel/host) with the
+  // token from Google Search Console to verify domain ownership. Omitted if unset.
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
 };
 
@@ -75,10 +86,10 @@ const jsonLd = {
   jobTitle: siteConfig.role,
   description: siteConfig.description,
   knowsAbout: [
-    "AI Engineering",
-    "Full-Stack Development",
+    "Full-Stack Web Development",
+    "Automation",
+    "Agentic AI",
     "Web Performance",
-    "Scalable Systems",
     "Next.js",
     "React",
     "Python",
