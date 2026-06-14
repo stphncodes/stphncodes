@@ -1,73 +1,85 @@
-# STPHNCODES — Portfolio
+<!-- ====================== HEADER ====================== -->
+<a href="https://www.cloudwithstephen.com">
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:7c3aed,50:6366f1,100:0ea5e9&height=200&section=header&text=STPHNCODES&fontColor=ffffff&fontSize=58&fontAlignY=38&desc=Building%20the%20web,%20automating%20the%20rest.&descSize=18&descAlignY=60&animation=fadeIn" alt="STPHNCODES" />
+</a>
 
-A futuristic, cinematic, AI-engineer-themed portfolio for **Stephen** (`STPHNCODES`).
-Built with a focus on premium feel, smooth motion, and production-grade code.
+<div align="center">
 
-## ✨ Highlights
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=3000&pause=900&color=8B5CF6&center=true&vCenter=true&width=820&lines=Software+Engineer+%C2%B7+AI+%C2%B7+Web+%C2%B7+Scale;Full-stack+web+development+%26+automation;Agentic+AI+and+production+systems;Turning+ambitious+ideas+into+systems+that+scale.)](https://www.cloudwithstephen.com)
 
-- **Next.js 15** (App Router) + **React 19** + **TypeScript** (strict)
-- **Tailwind CSS** design system with a cinematic dark theme & glassmorphism
-- **shadcn/ui** primitives (Button, Card, Badge — `new-york` style)
-- **Lenis** smooth scrolling, synced with **GSAP ScrollTrigger**
-- **Framer Motion** + **GSAP** for layered, performant animations
-- Animated hero with a canvas **particle constellation** + glowing grid
-- **Orbiting** tech-stack visualization
-- Project cards with **parallax 3D tilt** + cursor glare
-- Scroll-linked **experience timeline**
-- **Terminal-style** contact form
-- Custom glowing **cursor**, magnetic buttons, word-by-word text reveals
-- SEO: metadata, Open Graph, JSON-LD, sitemap, robots, manifest
-- Fully responsive + `prefers-reduced-motion` aware
+<a href="https://www.cloudwithstephen.com"><img src="https://img.shields.io/badge/Portfolio-cloudwithstephen.com-7c3aed?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" /></a>
+<a href="https://www.linkedin.com/in/stphncodes"><img src="https://img.shields.io/badge/LinkedIn-stphncodes-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+<a href="https://x.com/stphncodes"><img src="https://img.shields.io/badge/X-@stphncodes-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" /></a>
+<a href="mailto:stphncodes@gmail.com"><img src="https://img.shields.io/badge/Email-stphncodes@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
 
-## 🚀 Getting started
+</div>
 
-```bash
-npm install
-npm run dev      # http://localhost:3000
+<!-- ====================== ABOUT ====================== -->
+## `~/whoami`
+
+```ts
+const stephen = {
+  role:     "Software Engineer",
+  focus:    ["AI", "Web", "Scale"],
+  craft:    ["Agentic AI", "Automation", "Full-stack web"],
+  building: "Toyota Nigeria Pre-Owned Cars",
+  loves:    "clean systems & interfaces that feel alive",
+  ships:    true,
+};
 ```
 
-Other scripts:
+I'm **Stephen** — a software engineer who turns ambitious ideas into production systems that scale. My work lives at the intersection of **web development**, **automation**, and **agentic AI** — from AI agents and automated workflows down to the pixels and micro-interactions users actually feel.
 
-```bash
-npm run build       # production build
-npm run start       # serve the production build
-npm run lint        # eslint
-npm run type-check  # tsc --noEmit
-```
+> 🚗 **Currently building** — [Toyota Nigeria Pre-Owned Cars](https://toyotanigeriapreownedcars.com/), a certified pre-owned marketplace, with **TanStack + TypeScript + Supabase**.
 
-## 🗂 Project structure
+<!-- ====================== STACK ====================== -->
+## `~/stack`
 
-```
-app/                  # App Router: layout, page, SEO routes (sitemap/robots/manifest)
-  globals.css         # design tokens + Tailwind layers + utilities
-components/
-  animations/         # Reveal, TextReveal, Magnetic, TiltCard
-  background/         # Aurora blobs, canvas ParticleField
-  providers/          # SmoothScroll (Lenis + GSAP)
-  sections/           # Hero, About, TechStack, Projects, Experience, Contact, Footer
-  ui/                 # shadcn primitives (button, card, badge)
-  cursor.tsx          # custom cursor follower
-  navbar.tsx          # floating glass nav
-  section-heading.tsx # shared section header
-hooks/                # useMediaQuery, useMousePosition, useActiveSection
-lib/                  # site config, dummy data, utils (cn)
-```
+**Languages**
 
-## ✏️ Customizing
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 
-- **Brand / SEO / socials** → `lib/site.ts`
-- **Projects, tech stack, experience, stats** → `lib/data.ts`
-- **Colors / radius / fonts** → CSS variables in `app/globals.css` + `tailwind.config.ts`
-- **Contact submission** → wire the `handleSubmit` block in
-  `components/sections/contact.tsx` to your API or form service.
+**Frameworks & Frontend**
 
-## ⚡ Performance & a11y
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![TanStack](https://img.shields.io/badge/TanStack-FF4154?style=flat-square&logo=reactquery&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 
-- Canvas DPR is capped at 2× and the loop pauses on `visibilitychange`.
-- All motion is disabled under `prefers-reduced-motion: reduce`.
-- Fonts are loaded with `next/font` (`display: swap`, self-hosted).
-- `optimizePackageImports` is enabled for `framer-motion` and `lucide-react`.
+**Backend, Data & AI**
 
----
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+![GraphQL](https://img.shields.io/badge/GraphQL-E10098?style=flat-square&logo=graphql&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
+![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white)
 
-Built with Next.js, Framer Motion & GSAP.
+<!-- ====================== STATS ====================== -->
+## `~/stats`
+
+<div align="center">
+
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=stphncodes&show_icons=true&hide_border=true&bg_color=09090b&title_color=8b5cf6&icon_color=0ea5e9&text_color=a1a1aa&include_all_commits=true&count_private=true" alt="GitHub stats" />
+<img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=stphncodes&hide_border=true&background=09090b&ring=8b5cf6&fire=0ea5e9&currStreakLabel=8b5cf6&sideLabels=a1a1aa&dates=52525b&stroke=27272a" alt="GitHub streak" />
+
+<img height="155" src="https://github-readme-stats.vercel.app/api/top-langs/?username=stphncodes&layout=compact&hide_border=true&bg_color=09090b&title_color=8b5cf6&text_color=a1a1aa&langs_count=8" alt="Top languages" />
+
+</div>
+
+<!-- ====================== FOOTER ====================== -->
+<div align="center">
+
+### `let's build something fast and elegant.`
+
+<a href="mailto:stphncodes@gmail.com"><img src="https://img.shields.io/badge/Reach%20out-stphncodes@gmail.com-7c3aed?style=for-the-badge&logo=minutemailer&logoColor=white" alt="Contact" /></a>
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0ea5e9,50:6366f1,100:7c3aed&height=120&section=footer" alt="" />
+
+</div>
