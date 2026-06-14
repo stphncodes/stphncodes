@@ -21,10 +21,12 @@ export const techStack: TechItem[] = [
   { name: "Vite", ring: 1, color: "#a855f7", category: "framework" },
   { name: "Node.js", ring: 1, color: "#22c55e", category: "framework" },
   { name: "FastAPI", ring: 1, color: "#14b8a6", category: "framework" },
+  { name: "TanStack", ring: 1, color: "#ff4154", category: "framework" },
   { name: "LangChain", ring: 2, color: "#a855f7", category: "ai" },
   { name: "LangGraph", ring: 2, color: "#f97316", category: "ai" },
   { name: "OpenAI", ring: 2, color: "#10b981", category: "ai" },
   { name: "n8n", ring: 2, color: "#ef4444", category: "ai" },
+  { name: "Supabase", ring: 2, color: "#3ecf8e", category: "platform" },
   { name: "PostgreSQL", ring: 2, color: "#38bdf8", category: "platform" },
   { name: "Redis", ring: 2, color: "#ef4444", category: "platform" },
   { name: "GraphQL", ring: 2, color: "#ec4899", category: "platform" },
@@ -44,6 +46,18 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: "toyota-nigeria",
+    title: "Toyota Nigeria Pre-Owned Cars",
+    category: "E-Commerce Platform",
+    year: "2026",
+    description:
+      "A certified pre-owned marketplace for Toyota Nigeria — 2,000+ inspected vehicles and genuine parts, with model/year search, 160-point inspection badges, warranty, and verified ownership history.",
+    tags: ["TanStack", "TypeScript", "Supabase"],
+    href: "https://toyotanigeriapreownedcars.com/",
+    featured: true,
+    gradient: "from-red-500/30 via-rose-500/10 to-transparent",
+  },
   {
     id: "neura",
     title: "Neura",
@@ -95,6 +109,8 @@ export const projects: Project[] = [
 export interface ExperienceItem {
   role: string;
   company: string;
+  /** Optional external link for the company name. */
+  companyHref?: string;
   period: string;
   description: string;
   highlights: string[];
@@ -102,15 +118,16 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
-    role: "Senior Software Engineer",
-    company: "AI Product Startup",
+    role: "Software Engineer",
+    company: "Activetechconsult",
+    companyHref: "https://activetechconsult.com/",
     period: "2024 — Present",
     description:
-      "Leading the design of an LLM orchestration layer serving high-throughput inference for enterprise customers.",
+      "Building Toyota Nigeria's certified pre-owned cars platform — an e-commerce marketplace for inspected Toyota vehicles and genuine parts.",
     highlights: [
-      "Architected a multi-tenant inference gateway scaling to 10k req/s",
-      "Cut p95 latency 38% with semantic caching + speculative decoding",
-      "Mentored 4 engineers and owned the platform roadmap",
+      "Developed the customer-facing marketplace listing 2,000+ certified Toyota models with search and filtering by model and year",
+      "Built browsing, vehicle-detail, and inquiry flows around verified history, warranty, and transparent pricing",
+      "Shipped a fast, responsive UI serving thousands of customers across Nigeria",
     ],
   },
   {

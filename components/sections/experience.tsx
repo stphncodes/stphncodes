@@ -58,7 +58,18 @@ export function Experience() {
                       </span>
                     </div>
                     <p className="mt-1 text-sm font-medium text-foreground/80">
-                      {item.company}
+                      {item.companyHref ? (
+                        <a
+                          href={item.companyHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline-offset-4 transition-colors hover:text-primary hover:underline"
+                        >
+                          {item.company}
+                        </a>
+                      ) : (
+                        item.company
+                      )}
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                       {item.description}

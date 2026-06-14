@@ -10,10 +10,12 @@ import { TiltCard } from "@/components/animations/tilt-card";
 import { Badge } from "@/components/ui/badge";
 
 function ProjectCard({ project }: { project: Project }) {
+  const isExternal = project.href.startsWith("http");
   return (
     <TiltCard className="group h-full" intensity={8}>
       <a
         href={project.href}
+        {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
         className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-card/60 p-6 backdrop-blur-xl transition-colors duration-300 hover:border-white/20"
       >
         {/* Signature gradient glow */}
