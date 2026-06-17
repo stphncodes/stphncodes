@@ -60,8 +60,28 @@ export const navLinks = [
 ] as const;
 
 export const socialLinks = [
-  { label: "GitHub", href: "https://github.com", handle: "@stphncodes", icon: "github" },
-  { label: "X", href: "https://x.com", handle: "@stphncodes", icon: "twitter" },
-  { label: "LinkedIn", href: "https://linkedin.com", handle: "in/stphncodes", icon: "linkedin" },
-  { label: "Email", href: "mailto:stphncodes@gmail.com", handle: "stphncodes@gmail.com", icon: "mail" },
+  {
+    label: "GitHub",
+    href: "https://github.com/stphncodes",
+    handle: "@stphncodes",
+    icon: "github",
+  },
+  {
+    label: "X",
+    href: "https://x.com/stphncodes",
+    handle: "@stphncodes",
+    icon: "twitter",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/stephenjams/",
+    handle: "in/stphncodes",
+    icon: "linkedin",
+  },
+  {
+    label: "Email",
+    href: "mailto:stphncodes@gmail.com",
+    handle: "stphncodes@gmail.com",
+    icon: "mail",
+  },
 ] as const;
