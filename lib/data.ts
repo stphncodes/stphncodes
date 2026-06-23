@@ -82,17 +82,6 @@ export const projects: Project[] = [
     featured: true,
     gradient: "from-cyan-500/30 via-sky-500/10 to-transparent",
   },
-  {
-    id: "pulse",
-    title: "Pulse",
-    category: "Realtime Analytics",
-    year: "2024",
-    description:
-      "Event-streaming analytics dashboard handling millions of events per minute with sub-second aggregation and live, animated visualizations.",
-    tags: ["React", "Node.js", "Kafka", "ClickHouse"],
-    href: "#",
-    gradient: "from-emerald-500/30 via-teal-500/10 to-transparent",
-  },
 ];
 
 export interface ExperienceItem {
