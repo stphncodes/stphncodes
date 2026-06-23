@@ -24,17 +24,6 @@ Software Engineer · **AI · Web · Scale** — turning ambitious ideas into pro
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
 ![TanStack](https://img.shields.io/badge/TanStack-FF4154?style=flat-square&logo=reactquery&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
 
-### `~/stats`
-
-<div align="center">
-
-<img height="160" src="https://github-readme-stats.vercel.app/api?username=stphncodes&show_icons=true&hide_border=true&bg_color=09090b&title_color=8b5cf6&icon_color=0ea5e9&text_color=a1a1aa&include_all_commits=true&count_private=true" alt="GitHub stats" />
-<img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=stphncodes&layout=compact&hide_border=true&bg_color=09090b&title_color=8b5cf6&text_color=a1a1aa&langs_count=6" alt="Top languages" />
-
-</div>
