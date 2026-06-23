@@ -59,28 +59,28 @@ export const projects: Project[] = [
     gradient: "from-red-500/30 via-rose-500/10 to-transparent",
   },
   {
-    id: "neura",
-    title: "Neura",
-    category: "AI Platform",
+    id: "active-technologies",
+    title: "Active Technologies",
+    category: "Corporate Website",
     year: "2025",
     description:
-      "A production RAG platform that turns private knowledge bases into low-latency conversational agents. Streaming responses, vector caching, and evals baked in.",
-    tags: ["Next.js", "LangChain", "PostgreSQL", "pgvector", "Redis"],
-    href: "#",
-    featured: true,
-    gradient: "from-violet-500/30 via-fuchsia-500/10 to-transparent",
-  },
-  {
-    id: "atlas",
-    title: "Atlas",
-    category: "Developer Tooling",
-    year: "2024",
-    description:
-      "A code-intelligence engine that maps large TypeScript codebases into a queryable graph — powering instant refactors and semantic search across millions of lines.",
-    tags: ["TypeScript", "Node.js", "tree-sitter", "GraphQL"],
-    href: "#",
+      "The corporate website for Active Technologies, a tech recruitment firm that connects companies with vetted software engineers — built as a fast, responsive single-page React app.",
+    tags: ["React", "JavaScript"],
+    href: "https://activetechconsult.com/",
     featured: true,
     gradient: "from-cyan-500/30 via-sky-500/10 to-transparent",
+  },
+  {
+    id: "amana-cruise",
+    title: "AmanaCruise",
+    category: "Ridesharing Platform",
+    year: "2026",
+    description:
+      "A Nigerian intercity ridesharing platform — riders search routes and dates to book seats on shared trips, backed by ID verification, live tracking, and community ratings. Built the front-end UIs in React and Tailwind.",
+    tags: ["React", "Tailwind CSS"],
+    href: "https://amanacruise.com/",
+    featured: true,
+    gradient: "from-violet-500/30 via-fuchsia-500/10 to-transparent",
   },
 ];
 
@@ -106,30 +106,6 @@ export const experience: ExperienceItem[] = [
       "Developed the customer-facing marketplace listing 2,000+ certified Toyota models with search and filtering by model and year",
       "Built browsing, vehicle-detail, and inquiry flows around verified history, warranty, and transparent pricing",
       "Shipped a fast, responsive UI serving thousands of customers across Nigeria",
-    ],
-  },
-  {
-    role: "Full-Stack Engineer",
-    company: "FinTech Scale-up",
-    period: "2024 — 2025",
-    description:
-      "Built customer-facing products and the internal tooling that powered a 5x growth in active users.",
-    highlights: [
-      "Shipped a realtime dashboard used by 50k+ daily users",
-      "Drove migration to a typed, modular Next.js monorepo",
-      "Cut API response times 40% through query and caching optimization",
-    ],
-  },
-  {
-    role: "Software Engineer",
-    company: "Digital Product Studio",
-    period: "2023 — 2024",
-    description:
-      "Delivered web platforms for startups and brands across the product lifecycle, from prototype to launch.",
-    highlights: [
-      "Launched 12+ production web apps end-to-end",
-      "Established a rigorous automated testing and code-review culture",
-      "Specialized in performance and accessible, polished UI",
     ],
   },
 ];
