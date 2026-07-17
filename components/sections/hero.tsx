@@ -40,12 +40,12 @@ export function Hero() {
         delay: 0.15,
       });
 
-      tl.from("[data-hero='badge']", { y: 20, opacity: 0, duration: 0.7 })
-        .from(
-          "[data-hero='line'] .hero-word",
-          { yPercent: 120, opacity: 0, duration: 1, stagger: 0.08 },
-          "-=0.3"
-        )
+      tl.from("[data-hero='line'] .hero-word", {
+        yPercent: 120,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.08,
+      })
         .from(
           "[data-hero='photo']",
           { y: 40, opacity: 0, scale: 0.92, duration: 1 },
@@ -60,8 +60,7 @@ export function Hero() {
           "[data-hero='cta'] > *",
           { y: 20, opacity: 0, duration: 0.6, stagger: 0.12 },
           "-=0.5"
-        )
-        .from("[data-hero='scroll']", { opacity: 0, duration: 0.6 }, "-=0.2");
+        );
     }, root);
 
     return () => ctx.revert();
@@ -85,18 +84,6 @@ export function Hero() {
       >
         {/* ── Left: copy ── */}
         <div className="order-2 flex flex-col items-center text-center lg:order-1 lg:items-start lg:text-left">
-          {/* Availability badge */}
-          <div
-            data-hero="badge"
-            className="glass mb-8 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium text-muted-foreground"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-            </span>
-            Available for select projects
-          </div>
-
           {/* Headline */}
           <h1 className="font-display text-[clamp(2.6rem,8vw,6.5rem)] font-bold leading-[0.92] tracking-tight">
             <span data-hero="line" className="block overflow-hidden">
@@ -115,7 +102,7 @@ export function Hero() {
             <span className="font-medium text-foreground">
               {siteConfig.role}
             </span>{" "}
-            crafting fast, scalable products — from{" "}
+            crafting fast, scalable products, from{" "}
             <span className="text-foreground">full-stack web</span> to{" "}
             <span className="text-foreground">automation &amp; agentic AI</span>.
           </p>
@@ -150,7 +137,7 @@ export function Hero() {
             {/* Glow halo behind the frame */}
             <div
               aria-hidden
-              className="pointer-events-none absolute -inset-6 rounded-[3rem] bg-gradient-to-tr from-primary/30 via-fuchsia-500/20 to-cyan-400/30 opacity-60 blur-3xl transition-opacity duration-500 group-hover:opacity-90"
+              className="pointer-events-none absolute -inset-6 rounded-[3rem] bg-gradient-to-tr from-primary/30 via-blue-500/20 to-cyan-400/30 opacity-60 blur-3xl transition-opacity duration-500 group-hover:opacity-90"
             />
 
             {/* Spinning conic gradient ring */}
@@ -160,7 +147,7 @@ export function Hero() {
                 className="absolute inset-0 animate-spin-slow rounded-[2rem] opacity-80"
                 style={{
                   background:
-                    "conic-gradient(from 0deg, hsl(var(--primary)), #a855f7, #22d3ee, hsl(var(--primary)))",
+                    "conic-gradient(from 0deg, hsl(var(--primary)), #3b82f6, #22d3ee, hsl(var(--primary)))",
                 }}
               />
 
@@ -187,7 +174,6 @@ export function Hero() {
               className="glass absolute -left-5 bottom-10 hidden items-center gap-2 rounded-2xl px-3.5 py-2 text-xs font-medium shadow-glow-sm sm:flex"
               style={{ transform: "translateZ(60px)" }}
             >
-              <Sparkles className="size-3.5 text-primary" />
               {siteConfig.role}
             </div>
 
@@ -205,23 +191,6 @@ export function Hero() {
           </TiltCard>
         </div>
       </motion.div>
-
-      {/* Scroll cue */}
-      <a
-        data-hero="scroll"
-        href="#about"
-        aria-label="Scroll to about"
-        className="group absolute bottom-8 left-1/2 z-10 inline-flex -translate-x-1/2 flex-col items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground"
-      >
-        Scroll
-        <span className="flex h-9 w-5 items-start justify-center rounded-full border border-white/15 p-1">
-          <motion.span
-            className="h-2 w-1 rounded-full bg-primary"
-            animate={{ y: [0, 10, 0], opacity: [1, 0.3, 1] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </span>
-      </a>
 
       {/* Bottom scroll arrow accent */}
       <motion.div

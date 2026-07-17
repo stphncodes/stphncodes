@@ -52,7 +52,7 @@ export const projects: Project[] = [
     category: "E-Commerce Platform",
     year: "2026",
     description:
-      "A certified pre-owned marketplace for Toyota Nigeria — 2,000+ inspected vehicles and genuine parts, with model/year search, 160-point inspection badges, warranty, and verified ownership history.",
+      "A certified pre-owned marketplace for Toyota Nigeria: 2,000+ inspected vehicles and genuine parts, with model/year search, 160-point inspection badges, warranty, and verified ownership history.",
     tags: ["TanStack", "TypeScript", "Supabase"],
     href: "https://toyotanigeriapreownedcars.com/",
     featured: true,
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     category: "Corporate Website",
     year: "2025",
     description:
-      "The corporate website for Active Technologies, a tech recruitment firm that connects companies with vetted software engineers — built as a fast, responsive single-page React app.",
+      "The corporate website for Active Technologies, a tech recruitment firm that connects companies with vetted software engineers, built as a fast, responsive single-page React app.",
     tags: ["React", "JavaScript"],
     href: "https://activetechconsult.com/",
     featured: true,
@@ -76,11 +76,11 @@ export const projects: Project[] = [
     category: "Ridesharing Platform",
     year: "2026",
     description:
-      "A Nigerian intercity ridesharing platform — riders search routes and dates to book seats on shared trips, backed by ID verification, live tracking, and community ratings. Built the front-end UIs in React and Tailwind.",
+      "A Nigerian intercity ridesharing platform where riders search routes and dates to book seats on shared trips, backed by ID verification, live tracking, and community ratings. Built the front-end UIs in React and Tailwind.",
     tags: ["React", "Tailwind CSS"],
     href: "https://amanacruise.com/",
     featured: true,
-    gradient: "from-violet-500/30 via-fuchsia-500/10 to-transparent",
+    gradient: "from-blue-500/30 via-sky-500/10 to-transparent",
   },
 ];
 
@@ -99,9 +99,9 @@ export const experience: ExperienceItem[] = [
     role: "Software Engineer",
     company: "Activetechconsult",
     companyHref: "https://activetechconsult.com/",
-    period: "2025 — Present",
+    period: "2025 to Present",
     description:
-      "Building Toyota Nigeria's certified pre-owned cars platform — an e-commerce marketplace for inspected Toyota vehicles and genuine parts.",
+      "Building Toyota Nigeria's certified pre-owned cars platform, an e-commerce marketplace for inspected Toyota vehicles and genuine parts.",
     highlights: [
       "Developed the customer-facing marketplace listing 2,000+ certified Toyota models with search and filtering by model and year",
       "Built browsing, vehicle-detail, and inquiry flows around verified history, warranty, and transparent pricing",
@@ -141,19 +141,19 @@ export const services: Service[] = [
   {
     title: "AI Agent",
     tagline:
-      "A custom AI agent that handles leads, bookings, or customer support — automatically.",
+      "A custom AI agent that handles leads, bookings, or customer support, automatically.",
     includes: [
       "Claude API integration",
       "Chat / form interface",
       "Business logic setup",
     ],
     icon: "bot",
-    gradient: "from-violet-500/30 via-fuchsia-500/10 to-transparent",
+    gradient: "from-blue-500/30 via-sky-500/10 to-transparent",
   },
   {
     title: "Website + AI Bundle",
     tagline:
-      "The full package. A professional site with an AI agent built in — ready to grow your business.",
+      "The full package. A professional site with an AI agent built in, ready to grow your business.",
     includes: ["Everything above", "Priority support"],
     icon: "layers",
     gradient: "from-emerald-500/30 via-teal-500/10 to-transparent",
@@ -226,7 +226,7 @@ export const testimonials: Testimonial[] = [
     name: "Adaeze Okonkwo",
     role: "Founder, Lumina Skincare",
     quote:
-      "Stephen rebuilt our site and it loads instantly on mobile — online orders jumped 40% in the first month. He just gets what a small business actually needs.",
+      "Stephen rebuilt our site and it loads instantly on mobile. Online orders jumped 40% in the first month. He just gets what a small business actually needs.",
     initials: "AO",
   },
   {

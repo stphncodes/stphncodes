@@ -38,7 +38,7 @@ export function Testimonials() {
     <section id="testimonials" className="relative py-28 sm:py-36">
       <div className="container">
         <SectionHeading
-          eyebrow="07 — Testimonials"
+          eyebrow="07 · Testimonials"
           title="What clients say"
           description="A snapshot of the kind of results clients see. The layout below is ready to swap in genuine feedback."
           className="max-w-2xl"

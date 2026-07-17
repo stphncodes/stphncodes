@@ -9,7 +9,7 @@ export const siteConfig = {
   role: "Software Engineer",
   tagline: "Building the web, automating the rest.",
   description:
-    "STPHNCODES — Stephen James is a software engineer in Abuja, Nigeria, available worldwide. Specializing in full-stack web development, automation, and agentic AI with Next.js, React, Python, and TypeScript. Available for projects, contracts, and collaboration.",
+    "STPHNCODES. Stephen James is a software engineer in Abuja, Nigeria, available worldwide. Specializing in full-stack web development, automation, and agentic AI with Next.js, React, Python, and TypeScript. Available for projects, contracts, and collaboration.",
   url: "https://www.cloudwithstephen.com",
   email: "stphncodes@gmail.com",
   location: "Abuja, Nigeria",

@@ -75,9 +75,9 @@ export function Projects() {
       <div className="container">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
-            eyebrow="03 — Work"
+            eyebrow="03 · Work"
             title="Selected projects"
-            description="A few systems I've designed and shipped — spanning AI platforms, developer tooling, and realtime systems."
+            description="A few systems I've designed and shipped, spanning AI platforms, developer tooling, and realtime systems."
             className="max-w-2xl"
           />
         </div>

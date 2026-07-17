@@ -4,14 +4,14 @@
 
 @layer base {
   :root {
-    /* Cinematic dark palette — near-black with an electric violet/cyan accent. */
+    /* Cinematic dark palette — near-black with an electric blue/cyan accent. */
     --background: 240 10% 3.5%;
     --foreground: 0 0% 98%;
 
     --card: 240 9% 6%;
     --card-foreground: 0 0% 98%;
 
-    --primary: 263 90% 65%;
+    --primary: 221 90% 62%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 190 95% 55%;
@@ -20,12 +20,12 @@
     --muted: 240 6% 14%;
     --muted-foreground: 240 5% 65%;
 
-    --accent: 263 70% 60%;
+    --accent: 221 70% 58%;
     --accent-foreground: 0 0% 100%;
 
     --border: 240 6% 16%;
     --input: 240 6% 16%;
-    --ring: 263 90% 65%;
+    --ring: 221 90% 62%;
 
     --radius: 0.9rem;
   }

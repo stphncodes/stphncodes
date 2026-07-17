@@ -78,7 +78,7 @@ export function Pricing() {
 
       <div className="container relative">
         <SectionHeading
-          eyebrow="06 — Pricing"
+          eyebrow="06 · Pricing"
           title="Simple, transparent pricing"
           description="Clear scope, fixed starting points, no surprises. Need something custom? The Premium tier scales with you."
           align="center"

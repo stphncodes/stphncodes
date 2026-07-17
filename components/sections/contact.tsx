@@ -18,7 +18,7 @@ const BOOT_LINES = [
   "$ ssh guest@stphncodes.dev",
   "Authenticating… ✓ access granted",
   "Booting contact interface v2.0…",
-  "Type your message below — I read every one.",
+  "Type your message below. I read every one.",
 ];
 
 export function Contact() {
@@ -67,7 +67,7 @@ export function Contact() {
           name: form.name,
           email: form.email,
           message: form.message,
-          subject: `New message from ${form.name} — STPHNCODES`,
+          subject: `New message from ${form.name} · STPHNCODES`,
           from_name: "STPHNCODES Portfolio",
         }),
       });
@@ -87,7 +87,7 @@ export function Contact() {
     <section ref={sectionRef} id="contact" className="relative py-28 sm:py-36">
       <div className="container">
         <SectionHeading
-          eyebrow="08 — Contact"
+          eyebrow="08 · Contact"
           title="Let's build something"
           description="Have a project, a role, or just an idea worth exploring? Open a connection."
           align="center"
@@ -133,7 +133,7 @@ export function Contact() {
                       ✓ message transmitted successfully.
                     </p>
                     <p className="text-muted-foreground">
-                      Thanks for reaching out — I&apos;ll reply within 48h.
+                      Thanks for reaching out. I&apos;ll reply within 48h.
                     </p>
                     <button
                       type="button"
@@ -182,7 +182,7 @@ export function Contact() {
                       </Button>
                       {status === "error" && (
                         <span className="text-xs text-red-400">
-                          transmission failed — try again.
+                          transmission failed. try again.
                         </span>
                       )}
                     </div>

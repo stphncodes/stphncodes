@@ -23,9 +23,9 @@ export function Experience() {
     <section id="journey" className="relative py-28 sm:py-36">
       <div className="container">
         <SectionHeading
-          eyebrow="04 — Journey"
+          eyebrow="04 · Journey"
           title="Experience timeline"
-          description="The path so far — building, leading, and scaling across startups and studios."
+          description="The path so far: building, leading, and scaling across startups and studios."
           className="max-w-2xl"
         />
 

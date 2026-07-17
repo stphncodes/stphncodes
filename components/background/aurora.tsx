@@ -28,7 +28,7 @@ export function Aurora({ className }: { className?: string }) {
         transition={{ duration: 26, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="glow-blob absolute bottom-[-15%] left-1/3 h-[34rem] w-[34rem] rounded-full bg-fuchsia-500/15"
+        className="glow-blob absolute bottom-[-15%] left-1/3 h-[34rem] w-[34rem] rounded-full bg-blue-500/15"
         animate={{ x: [0, 40, -40, 0], y: [0, -30, 20, 0] }}
         transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
       />

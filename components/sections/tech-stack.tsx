@@ -81,7 +81,7 @@ export function TechStack() {
     <section id="stack" className="relative py-28 sm:py-36">
       <div className="container">
         <SectionHeading
-          eyebrow="02 — Stack"
+          eyebrow="02 · Stack"
           title="A toolkit built for scale"
           description="Languages, frameworks, and platforms I reach for to ship reliable, intelligent products end-to-end."
           align="center"

@@ -83,9 +83,9 @@ export function Services() {
     <section id="offer" className="relative py-28 sm:py-36">
       <div className="container">
         <SectionHeading
-          eyebrow="05 — What I offer"
+          eyebrow="05 · What I offer"
           title="Services built to ship"
-          description="From a polished website to a custom AI agent — pick a lane, or take the full package and let the two work together."
+          description="From a polished website to a custom AI agent. Pick a lane, or take the full package and let the two work together."
           className="max-w-2xl"
         />
 

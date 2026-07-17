@@ -33,7 +33,7 @@ export default function Error({
         </h1>
 
         <p className="mt-4 max-w-md text-balance text-muted-foreground">
-          An unexpected error interrupted the render. You can try again — if it
+          An unexpected error interrupted the render. You can try again. If it
           persists, the issue is on my end.
         </p>
 

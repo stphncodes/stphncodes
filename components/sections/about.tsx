@@ -33,9 +33,9 @@ export function About() {
 
       <div className="container relative">
         <SectionHeading
-          eyebrow="01 — About"
+          eyebrow="01 · About"
           title="Engineer at the edge of AI and the web"
-          description="I build products where machine intelligence meets real users — obsessing over latency, reliability, and interfaces that feel alive."
+          description="I build products where machine intelligence meets real users, obsessing over latency, reliability, and interfaces that feel alive."
           className="max-w-3xl"
         />
 
@@ -44,7 +44,7 @@ export function About() {
           <Reveal direction="up" className="lg:col-span-7">
             <div className="glass relative h-full overflow-hidden rounded-3xl p-7 sm:p-9">
               <p className="text-lg leading-relaxed text-foreground/90">
-                <TextReveal text="I'm Stephen — a software engineer who turns ambitious ideas into production systems that scale." />
+                <TextReveal text="I'm Stephen, a software engineer who turns ambitious ideas into production systems that scale." />
               </p>
               <p className="mt-5 leading-relaxed text-muted-foreground">
                 My work lives at the intersection of{" "}
@@ -56,7 +56,7 @@ export function About() {
               </p>
               <p className="mt-5 leading-relaxed text-muted-foreground">
                 When I&apos;m not shipping, I&apos;m exploring distributed
-                systems, language design, and the next wave of agentic tooling —
+                systems, language design, and the next wave of agentic tooling,
                 always chasing the line between fast and elegant.
               </p>
 
@@ -105,7 +105,7 @@ export function About() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 + i * 0.1 }}
                       >
-                        <span className="text-violet-400">{line.t}</span>
+                        <span className="text-blue-400">{line.t}</span>
                         <span className="text-sky-300">{line.n}</span>
                         <span className="text-muted-foreground">{line.o}</span>
                         <span className="text-emerald-300">{line.c}</span>

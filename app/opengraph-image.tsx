@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site";
 
 // Social card rendered via Satori. Node runtime (default) — more reliable on
 // Vercel's build than the edge runtime, and avoids the re-exported-runtime warning.
-export const alt = `${siteConfig.name} — ${siteConfig.author}, ${siteConfig.role}`;
+export const alt = `${siteConfig.name} · ${siteConfig.author}, ${siteConfig.role}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -20,9 +20,9 @@ export default function OpengraphImage() {
           justifyContent: "space-between",
           padding: "72px",
           backgroundColor: "#09090b",
-          // Two soft brand glows (primary violet + secondary cyan).
+          // Two soft brand glows (primary blue + secondary cyan).
           backgroundImage:
-            "radial-gradient(900px 500px at 15% 0%, rgba(139,92,246,0.35), transparent 60%), radial-gradient(800px 500px at 100% 100%, rgba(34,211,238,0.28), transparent 60%)",
+            "radial-gradient(900px 500px at 15% 0%, rgba(59,130,246,0.35), transparent 60%), radial-gradient(800px 500px at 100% 100%, rgba(34,211,238,0.28), transparent 60%)",
           fontFamily: "sans-serif",
         }}
       >
@@ -40,8 +40,8 @@ export default function OpengraphImage() {
                 width: "16px",
                 height: "16px",
                 borderRadius: "9999px",
-                backgroundColor: "#8b5cf6",
-                boxShadow: "0 0 32px 4px rgba(139,92,246,0.9)",
+                backgroundColor: "#3b82f6",
+                boxShadow: "0 0 32px 4px rgba(59,130,246,0.9)",
               }}
             />
             <div

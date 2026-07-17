@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface SectionHeadingProps {
-  /** Small mono label, e.g. "01 — About". */
+  /** Small mono label, e.g. "01 · About". */
   eyebrow: string;
   title: string;
   description?: string;
