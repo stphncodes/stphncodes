@@ -135,8 +135,8 @@ export const processSteps: ProcessStep[] = [
 ];
 
 export const stats = [
-  { value: "15+", label: "Projects shipped" },
-  { value: "2,000+", label: "Listings built" },
+  { value: "5+", label: "Projects shipped" },
+  { value: "1k+", label: "Listings built" },
   { value: "3+", label: "Years building" },
   { value: "48h", label: "Reply time" },
 ] as const;
