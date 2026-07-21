@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  /* Cinematic dark palette (default) — near-black with a blue/cyan accent. */
   :root {
-    /* Cinematic dark palette — near-black with an electric blue/cyan accent. */
+    color-scheme: dark;
+
     --background: 240 10% 3.5%;
     --foreground: 0 0% 98%;
 
@@ -92,23 +94,23 @@
 }
 
 @layer components {
-  /* Glassmorphism surface */
+  /* Glassmorphism surface — foreground-tinted so it adapts to light/dark. */
   .glass {
-    @apply border border-white/10 bg-white/[0.03] backdrop-blur-xl;
+    @apply border border-foreground/10 bg-foreground/[0.03] backdrop-blur-xl;
     background-image: linear-gradient(
       to bottom right,
-      hsl(0 0% 100% / 0.06),
-      hsl(0 0% 100% / 0.01)
+      hsl(var(--foreground) / 0.06),
+      hsl(var(--foreground) / 0.01)
     );
   }
 
   .glass-strong {
-    @apply border border-white/10 bg-white/[0.06] backdrop-blur-2xl;
+    @apply border border-foreground/10 bg-foreground/[0.06] backdrop-blur-2xl;
   }
 
   /* Gradient text */
   .text-gradient {
-    @apply bg-gradient-to-br from-white via-white to-white/40 bg-clip-text text-transparent;
+    @apply bg-gradient-to-br from-foreground via-foreground to-foreground/40 bg-clip-text text-transparent;
   }
 
   .text-gradient-primary {

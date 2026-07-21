@@ -16,7 +16,7 @@ function ProjectCard({ project }: { project: Project }) {
       <a
         href={project.href}
         {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
-        className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-card/60 p-6 backdrop-blur-xl transition-colors duration-300 hover:border-white/20"
+        className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-foreground/10 bg-card/60 p-6 backdrop-blur-xl transition-colors duration-300 hover:border-foreground/20"
       >
         {/* Signature gradient glow */}
         <div
@@ -37,7 +37,7 @@ function ProjectCard({ project }: { project: Project }) {
                 {project.year}
               </span>
             </div>
-            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-muted-foreground transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-foreground/10 bg-foreground/[0.03] text-muted-foreground transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
               <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:rotate-45" />
             </span>
           </div>
@@ -54,7 +54,7 @@ function ProjectCard({ project }: { project: Project }) {
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-foreground/70"
+                className="rounded-full border border-foreground/10 bg-foreground/[0.03] px-2.5 py-1 font-mono text-[11px] text-foreground/70"
               >
                 {tag}
               </span>

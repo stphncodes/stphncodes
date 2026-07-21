@@ -87,7 +87,7 @@ export function Hero() {
           {/* Studio eyebrow */}
           <span
             data-hero="sub"
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 font-mono text-xs text-muted-foreground"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-foreground/[0.03] px-3.5 py-1.5 font-mono text-xs text-muted-foreground"
           >
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />

@@ -99,7 +99,7 @@ export function Navbar() {
                   {isActive && (
                     <motion.span
                       layoutId="nav-pill"
-                      className="absolute inset-0 -z-10 rounded-full bg-white/[0.07]"
+                      className="absolute inset-0 -z-10 rounded-full bg-foreground/[0.07]"
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
@@ -122,7 +122,7 @@ export function Navbar() {
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={open}
-            className="flex h-9 w-9 items-center justify-center rounded-full text-foreground/80 transition-colors hover:bg-white/[0.06] md:hidden"
+            className="flex h-9 w-9 items-center justify-center rounded-full text-foreground/80 transition-colors hover:bg-foreground/[0.06] md:hidden"
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
@@ -158,7 +158,7 @@ export function Navbar() {
                   <a
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="block rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-white/[0.06] hover:text-foreground"
+                    className="block rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/[0.06] hover:text-foreground"
                   >
                     {link.label}
                   </a>

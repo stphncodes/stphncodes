@@ -62,7 +62,7 @@ function TechLogo({ name, index }: { name: string; index: number }) {
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.45, delay: index * 0.035, ease: [0.21, 0.47, 0.32, 0.98] }}
       whileHover={{ y: -4 }}
-      className="group/logo relative flex aspect-square flex-col items-center justify-center gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-sm transition-colors duration-300 hover:border-white/20"
+      className="group/logo relative flex aspect-square flex-col items-center justify-center gap-3 rounded-2xl border border-foreground/[0.08] bg-foreground/[0.02] backdrop-blur-sm transition-colors duration-300 hover:border-foreground/20"
       style={{ ["--brand" as string]: brand }}
     >
       {/* Brand glow that blooms on hover */}

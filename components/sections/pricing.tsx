@@ -16,7 +16,7 @@ function PricingCard({ tier }: { tier: PricingTier }) {
         "relative flex h-full flex-col overflow-hidden rounded-2xl border p-7 backdrop-blur-xl transition-colors duration-300",
         tier.popular
           ? "border-primary/40 bg-card/80 shadow-glow-sm lg:-mt-4 lg:mb-4"
-          : "border-white/10 bg-card/50 hover:border-white/20"
+          : "border-foreground/10 bg-card/50 hover:border-foreground/20"
       )}
     >
       {tier.popular && (
@@ -45,7 +45,7 @@ function PricingCard({ tier }: { tier: PricingTier }) {
           )}
         </div>
 
-        <ul className="mt-6 flex-1 space-y-3 border-t border-white/10 pt-6">
+        <ul className="mt-6 flex-1 space-y-3 border-t border-foreground/10 pt-6">
           {tier.features.map((feature) => (
             <li
               key={feature}

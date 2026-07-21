@@ -38,7 +38,7 @@ export default function Error({
         </p>
 
         {error.digest && (
-          <code className="mt-4 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 font-mono text-xs text-muted-foreground">
+          <code className="mt-4 rounded-lg border border-foreground/10 bg-foreground/[0.03] px-3 py-1.5 font-mono text-xs text-muted-foreground">
             ref: {error.digest}
           </code>
         )}

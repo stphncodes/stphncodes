@@ -39,12 +39,12 @@ export function Faq() {
         <div className="mx-auto mt-16 flex max-w-3xl flex-col gap-4">
           {faqs.map((faq, i) => (
             <Reveal key={faq.question} direction="up" delay={i * 0.05}>
-              <details className="group glass overflow-hidden rounded-2xl transition-colors duration-300 hover:border-white/20">
+              <details className="group glass overflow-hidden rounded-2xl transition-colors duration-300 hover:border-foreground/20">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-6 [&::-webkit-details-marker]:hidden">
                   <h3 className="font-display text-base font-semibold tracking-tight sm:text-lg">
                     {faq.question}
                   </h3>
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-muted-foreground transition-colors group-open:border-primary/40 group-open:text-primary">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-foreground/10 bg-foreground/[0.03] text-muted-foreground transition-colors group-open:border-primary/40 group-open:text-primary">
                     <ChevronDown className="size-4 transition-transform duration-300 group-open:rotate-180" />
                   </span>
                 </summary>

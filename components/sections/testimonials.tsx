@@ -8,16 +8,16 @@ import { Reveal } from "@/components/animations/reveal";
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <figure className="glass group relative flex h-full flex-col rounded-2xl p-6 transition-colors duration-300 hover:border-white/20">
+    <figure className="glass group relative flex h-full flex-col rounded-2xl p-6 transition-colors duration-300 hover:border-foreground/20">
       <Quote className="size-7 text-primary/40" />
 
       <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-foreground/80">
         “{testimonial.quote}”
       </blockquote>
 
-      <figcaption className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
+      <figcaption className="mt-6 flex items-center gap-3 border-t border-foreground/10 pt-5">
         {/* Avatar placeholder — swap for a real photo when available */}
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] font-mono text-sm text-muted-foreground">
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-foreground/10 bg-foreground/[0.04] font-mono text-sm text-muted-foreground">
           {testimonial.initials}
         </span>
         <div className="min-w-0">

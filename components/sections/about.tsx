@@ -75,7 +75,7 @@ export function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.4, delay: i * 0.06 }}
-                    className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-foreground/80 transition-colors hover:border-primary/40 hover:text-foreground"
+                    className="rounded-full border border-foreground/10 bg-foreground/[0.04] px-3 py-1.5 text-xs font-medium text-foreground/80 transition-colors hover:border-primary/40 hover:text-foreground"
                   >
                     {item}
                   </motion.span>
@@ -120,7 +120,7 @@ export function About() {
                   </pre>
 
                   {/* live status row */}
-                  <div className="mt-5 flex items-center gap-2 border-t border-white/10 pt-4 text-xs">
+                  <div className="mt-5 flex items-center gap-2 border-t border-foreground/10 pt-4 text-xs">
                     <span className="relative flex h-2 w-2">
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70" />
                       <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />

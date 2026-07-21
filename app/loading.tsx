@@ -27,7 +27,7 @@ export default function Loading() {
             STPHNCODES
           </span>
           {/* Progress shimmer bar */}
-          <div className="relative h-0.5 w-40 overflow-hidden rounded-full bg-white/10">
+          <div className="relative h-0.5 w-40 overflow-hidden rounded-full bg-foreground/10">
             <div className="loader-sweep absolute inset-y-0 w-1/3 rounded-full bg-gradient-to-r from-transparent via-primary to-transparent" />
           </div>
           <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
