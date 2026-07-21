@@ -24,11 +24,17 @@ export function Cursor() {
   useEffect(() => {
     if (!isDesktop) return;
 
+    // Position update is hot (fires per pixel) — keep it to just the motion
+    // values. React bails out of the setVisible(true) re-render once visible.
     const move = (e: MouseEvent) => {
       x.set(e.clientX);
       y.set(e.clientY);
       setVisible(true);
+    };
 
+    // Hover detection only needs to run when the pointer crosses into a new
+    // element, not on every pixel — mouseover fires on boundary changes.
+    const over = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       setHovering(
         Boolean(target.closest('a, button, [data-cursor="hover"], input, textarea'))
@@ -38,9 +44,11 @@ export function Cursor() {
     const leave = () => setVisible(false);
 
     window.addEventListener("mousemove", move, { passive: true });
+    window.addEventListener("mouseover", over, { passive: true });
     document.addEventListener("mouseleave", leave);
     return () => {
       window.removeEventListener("mousemove", move);
+      window.removeEventListener("mouseover", over);
       document.removeEventListener("mouseleave", leave);
     };
   }, [isDesktop, x, y]);
