@@ -17,7 +17,7 @@ export function Footer() {
   const year = 2026; // Avoid hydration drift from runtime Date in this static build.
 
   return (
-    <footer className="relative overflow-hidden border-t border-white/10">
+    <footer className="relative overflow-hidden border-t border-foreground/10">
       <div className="absolute inset-0 bg-dots opacity-30 mask-fade-b" />
 
       <div className="container relative py-16">
@@ -44,7 +44,7 @@ export function Footer() {
                       target={s.href.startsWith("http") ? "_blank" : undefined}
                       rel="noreferrer"
                       aria-label={s.label}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.02] text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/10 bg-foreground/[0.02] text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
                     >
                       <Icon className="size-4" />
                     </a>
@@ -90,12 +90,12 @@ export function Footer() {
         {/* Oversized wordmark */}
         <div
           aria-hidden
-          className="pointer-events-none mt-12 select-none text-center font-display text-[18vw] font-bold leading-none tracking-tighter text-white/[0.03] lg:text-[14rem]"
+          className="pointer-events-none mt-12 select-none text-center font-display text-[18vw] font-bold leading-none tracking-tighter text-foreground/[0.03] lg:text-[14rem]"
         >
           STPHNCODES
         </div>
 
-        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-foreground/10 pt-8 sm:flex-row">
           <p className="text-xs text-muted-foreground">
             © {year} {siteConfig.name}. Crafted with Next.js, Framer Motion &amp; GSAP.
           </p>
@@ -106,7 +106,7 @@ export function Footer() {
             )}
           >
             Back to top
-            <span className="flex h-7 w-7 items-center justify-center rounded-full border border-white/10 transition-transform group-hover:-translate-y-0.5">
+            <span className="flex h-7 w-7 items-center justify-center rounded-full border border-foreground/10 transition-transform group-hover:-translate-y-0.5">
               <ArrowUp className="size-3.5" />
             </span>
           </a>

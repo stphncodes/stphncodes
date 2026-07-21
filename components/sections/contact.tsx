@@ -99,7 +99,7 @@ export function Contact() {
           <Reveal direction="up">
             <div className="glass-strong overflow-hidden rounded-2xl shadow-glow-sm">
               {/* Title bar */}
-              <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.03] px-4 py-3">
+              <div className="flex items-center gap-2 border-b border-foreground/10 bg-foreground/[0.03] px-4 py-3">
                 <span className="h-3 w-3 rounded-full bg-red-400/80" />
                 <span className="h-3 w-3 rounded-full bg-yellow-400/80" />
                 <span className="h-3 w-3 rounded-full bg-green-400/80" />
@@ -206,7 +206,7 @@ export function Contact() {
                       href={s.href}
                       target={s.href.startsWith("http") ? "_blank" : undefined}
                       rel="noreferrer"
-                      className="group flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 text-sm transition-colors hover:border-white/20 hover:bg-white/[0.05]"
+                      className="group flex items-center justify-between rounded-xl border border-foreground/10 bg-foreground/[0.02] px-4 py-3 text-sm transition-colors hover:border-foreground/20 hover:bg-foreground/[0.05]"
                     >
                       <span className="font-medium">{s.label}</span>
                       <span className="font-mono text-xs text-muted-foreground transition-colors group-hover:text-primary">
@@ -261,7 +261,7 @@ function TerminalField({
         <span className="text-muted-foreground">{">"}</span>
         {label}
       </span>
-      <div className="flex items-start gap-2 rounded-lg border border-white/10 bg-background/40 px-3 py-2 transition-colors focus-within:border-primary/50">
+      <div className="flex items-start gap-2 rounded-lg border border-foreground/10 bg-background/40 px-3 py-2 transition-colors focus-within:border-primary/50">
         <span aria-hidden className="select-none text-emerald-300">
           $
         </span>

@@ -13,23 +13,28 @@ export interface TechItem {
 }
 
 export const techStack: TechItem[] = [
-  { name: "Python", ring: 0, color: "#3b82f6", category: "language" },
-  { name: "JavaScript", ring: 0, color: "#eab308", category: "language" },
-  { name: "TypeScript", ring: 0, color: "#0ea5e9", category: "language" },
-  { name: "Next.js", ring: 1, color: "#e5e7eb", category: "framework" },
-  { name: "React", ring: 1, color: "#22d3ee", category: "framework" },
-  { name: "Vite", ring: 1, color: "#a855f7", category: "framework" },
-  { name: "Node.js", ring: 1, color: "#22c55e", category: "framework" },
-  { name: "FastAPI", ring: 1, color: "#14b8a6", category: "framework" },
+  // Web foundation
+  { name: "TypeScript", ring: 0, color: "#3178C6", category: "language" },
+  { name: "JavaScript", ring: 0, color: "#F7DF1E", category: "language" },
+  { name: "Python", ring: 0, color: "#3776AB", category: "language" },
+  { name: "React", ring: 1, color: "#61DAFB", category: "framework" },
+  { name: "Next.js", ring: 1, color: "#ffffff", category: "framework" },
+  { name: "Node.js", ring: 1, color: "#5FA04E", category: "framework" },
   { name: "TanStack", ring: 1, color: "#ff4154", category: "framework" },
-  { name: "LangChain", ring: 2, color: "#a855f7", category: "ai" },
+  { name: "Vite", ring: 1, color: "#646CFF", category: "framework" },
+  // Agentic AI
+  { name: "Claude", ring: 2, color: "#D97757", category: "ai" },
+  { name: "OpenAI", ring: 2, color: "#ffffff", category: "ai" },
+  { name: "LangChain", ring: 2, color: "#ffffff", category: "ai" },
   { name: "LangGraph", ring: 2, color: "#f97316", category: "ai" },
-  { name: "OpenAI", ring: 2, color: "#10b981", category: "ai" },
-  { name: "n8n", ring: 2, color: "#ef4444", category: "ai" },
-  { name: "Supabase", ring: 2, color: "#3ecf8e", category: "platform" },
-  { name: "PostgreSQL", ring: 2, color: "#38bdf8", category: "platform" },
-  { name: "Redis", ring: 2, color: "#ef4444", category: "platform" },
-  { name: "GraphQL", ring: 2, color: "#ec4899", category: "platform" },
+  // Automation
+  { name: "n8n", ring: 2, color: "#EA4B71", category: "ai" },
+  { name: "Zapier", ring: 2, color: "#FF4F00", category: "ai" },
+  { name: "Make", ring: 2, color: "#8B5CF6", category: "ai" },
+  // Platforms & data
+  { name: "Supabase", ring: 2, color: "#3ECF8E", category: "platform" },
+  { name: "PostgreSQL", ring: 2, color: "#4169E1", category: "platform" },
+  { name: "Vercel", ring: 2, color: "#ffffff", category: "platform" },
 ];
 
 export interface Project {
@@ -135,8 +140,8 @@ export const processSteps: ProcessStep[] = [
 ];
 
 export const stats = [
-  { value: "15+", label: "Projects shipped" },
-  { value: "2,000+", label: "Listings built" },
+  { value: "5+", label: "Projects shipped" },
+  { value: "1k+", label: "Listings built" },
   { value: "3+", label: "Years building" },
   { value: "48h", label: "Reply time" },
 ] as const;

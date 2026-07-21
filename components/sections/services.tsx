@@ -25,7 +25,7 @@ function ServiceCard({ service }: { service: Service }) {
           "relative flex h-full flex-col overflow-hidden rounded-2xl border bg-card/60 p-7 backdrop-blur-xl transition-colors duration-300",
           service.featured
             ? "border-primary/30 hover:border-primary/50"
-            : "border-white/10 hover:border-white/20"
+            : "border-foreground/10 hover:border-foreground/20"
         )}
       >
         {/* Signature gradient glow */}
@@ -41,7 +41,7 @@ function ServiceCard({ service }: { service: Service }) {
           style={{ transform: "translateZ(40px)" }}
         >
           <div className="flex items-start justify-between gap-4">
-            <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-primary transition-colors duration-300 group-hover:border-primary/40">
+            <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-foreground/10 bg-foreground/[0.04] text-primary transition-colors duration-300 group-hover:border-primary/40">
               <Icon className="size-5" />
             </span>
             {service.featured && <Badge>Best ROI</Badge>}
@@ -55,7 +55,7 @@ function ServiceCard({ service }: { service: Service }) {
             {service.tagline}
           </p>
 
-          <div className="mt-6 border-t border-white/10 pt-5">
+          <div className="mt-6 border-t border-foreground/10 pt-5">
             <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground/70">
               Includes
             </span>

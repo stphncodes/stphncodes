@@ -31,7 +31,7 @@ export function Experience() {
 
         <div ref={timelineRef} className="relative mt-16 pl-8 sm:pl-10">
           {/* Track */}
-          <div className="absolute left-[7px] top-2 h-full w-px bg-white/10 sm:left-[11px]" />
+          <div className="absolute left-[7px] top-2 h-full w-px bg-foreground/10 sm:left-[11px]" />
           {/* Animated fill */}
           <motion.div
             style={{ scaleY: progress }}
@@ -48,7 +48,7 @@ export function Experience() {
                     <span className="relative h-3 w-3 rounded-full border-2 border-primary bg-background" />
                   </span>
 
-                  <div className="glass group rounded-2xl p-6 transition-colors duration-300 hover:border-white/20">
+                  <div className="glass group rounded-2xl p-6 transition-colors duration-300 hover:border-foreground/20">
                     <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                       <h3 className="font-display text-xl font-semibold">
                         {item.title}
@@ -64,7 +64,7 @@ export function Experience() {
                       {item.points.map((p) => (
                         <li
                           key={p}
-                          className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-foreground/75"
+                          className="flex items-center gap-2 rounded-full border border-foreground/10 bg-foreground/[0.03] px-3 py-1 text-xs text-foreground/75"
                         >
                           <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" />
                           {p}

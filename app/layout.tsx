@@ -5,6 +5,7 @@ import { siteConfig, socialLinks } from "@/lib/site";
 import { services } from "@/lib/data";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { Cursor } from "@/components/cursor";
+import { ChatWidget } from "@/components/chat/chat-widget";
 import "./globals.css";
 
 const sans = Inter({
@@ -211,6 +212,7 @@ export default function RootLayout({
         </a>
         <Cursor />
         <SmoothScroll>{children}</SmoothScroll>
+        <ChatWidget />
       </body>
     </html>
   );

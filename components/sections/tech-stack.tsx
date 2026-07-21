@@ -10,14 +10,17 @@ import {
   SiReact,
   SiVite,
   SiNodedotjs,
-  SiFastapi,
+  SiReactquery,
+  SiClaude,
   SiLangchain,
   SiLanggraph,
   SiOpenai,
   SiN8N,
+  SiZapier,
+  SiMake,
+  SiSupabase,
   SiPostgresql,
-  SiRedis,
-  SiGraphql,
+  SiVercel,
 } from "react-icons/si";
 
 import { techStack } from "@/lib/data";
@@ -27,21 +30,24 @@ import { Reveal } from "@/components/animations/reveal";
 // Real brand logo + official brand color per tech. Dark-on-black brands
 // (Next.js, LangChain, OpenAI…) are mapped to white so they read on the dark UI.
 const ICONS: Record<string, { Icon: IconType; brand: string }> = {
-  Python: { Icon: SiPython, brand: "#3776AB" },
-  JavaScript: { Icon: SiJavascript, brand: "#F7DF1E" },
   TypeScript: { Icon: SiTypescript, brand: "#3178C6" },
-  "Next.js": { Icon: SiNextdotjs, brand: "#ffffff" },
+  JavaScript: { Icon: SiJavascript, brand: "#F7DF1E" },
+  Python: { Icon: SiPython, brand: "#3776AB" },
   React: { Icon: SiReact, brand: "#61DAFB" },
-  Vite: { Icon: SiVite, brand: "#646CFF" },
+  "Next.js": { Icon: SiNextdotjs, brand: "#ffffff" },
   "Node.js": { Icon: SiNodedotjs, brand: "#5FA04E" },
-  FastAPI: { Icon: SiFastapi, brand: "#009688" },
-  LangChain: { Icon: SiLangchain, brand: "#ffffff" },
-  LangGraph: { Icon: SiLanggraph, brand: "#ffffff" },
+  TanStack: { Icon: SiReactquery, brand: "#FF4154" },
+  Vite: { Icon: SiVite, brand: "#646CFF" },
+  Claude: { Icon: SiClaude, brand: "#D97757" },
   OpenAI: { Icon: SiOpenai, brand: "#ffffff" },
+  LangChain: { Icon: SiLangchain, brand: "#ffffff" },
+  LangGraph: { Icon: SiLanggraph, brand: "#f97316" },
   n8n: { Icon: SiN8N, brand: "#EA4B71" },
+  Zapier: { Icon: SiZapier, brand: "#FF4F00" },
+  Make: { Icon: SiMake, brand: "#8B5CF6" },
+  Supabase: { Icon: SiSupabase, brand: "#3ECF8E" },
   PostgreSQL: { Icon: SiPostgresql, brand: "#4169E1" },
-  Redis: { Icon: SiRedis, brand: "#FF4438" },
-  GraphQL: { Icon: SiGraphql, brand: "#E10098" },
+  Vercel: { Icon: SiVercel, brand: "#ffffff" },
 };
 
 function TechLogo({ name, index }: { name: string; index: number }) {
@@ -56,7 +62,7 @@ function TechLogo({ name, index }: { name: string; index: number }) {
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.45, delay: index * 0.035, ease: [0.21, 0.47, 0.32, 0.98] }}
       whileHover={{ y: -4 }}
-      className="group/logo relative flex aspect-square flex-col items-center justify-center gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-sm transition-colors duration-300 hover:border-white/20"
+      className="group/logo relative flex aspect-square flex-col items-center justify-center gap-3 rounded-2xl border border-foreground/[0.08] bg-foreground/[0.02] backdrop-blur-sm transition-colors duration-300 hover:border-foreground/20"
       style={{ ["--brand" as string]: brand }}
     >
       {/* Brand glow that blooms on hover */}
@@ -82,8 +88,8 @@ export function TechStack() {
       <div className="container">
         <SectionHeading
           eyebrow="02 · Stack"
-          title="Built on tools you can trust"
-          description="The same modern, battle-tested tools behind fast, reliable products, so your site is built to last and ready to scale with you."
+          title="A modern web, AI & automation stack"
+          description="The in-demand tools I build with, from Claude-powered AI agents and n8n automations to the web frameworks behind fast, reliable products that scale."
           align="center"
           className="mx-auto"
         />
