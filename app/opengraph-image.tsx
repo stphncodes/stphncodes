@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 
+import { markDataUri } from "@/lib/brand";
 import { siteConfig } from "@/lib/site";
 
 // Social card rendered via Satori. Node runtime (default) — more reliable on
@@ -35,14 +36,13 @@ export default function OpengraphImage() {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-            <div
-              style={{
-                width: "16px",
-                height: "16px",
-                borderRadius: "9999px",
-                backgroundColor: "#3b82f6",
-                boxShadow: "0 0 32px 4px rgba(59,130,246,0.9)",
-              }}
+            {/* eslint-disable-next-line @next/next/no-img-element -- Satori renders raw <img> */}
+            <img
+              src={markDataUri}
+              alt=""
+              width={44}
+              height={44}
+              style={{ objectFit: "contain" }}
             />
             <div
               style={{

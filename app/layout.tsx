@@ -94,6 +94,7 @@ const businessId = `${siteConfig.url}/#business`;
 const personId = `${siteConfig.url}/#stephen`;
 const websiteId = `${siteConfig.url}/#website`;
 const imageUrl = `${siteConfig.url}/opengraph-image`;
+const logoUrl = `${siteConfig.url}/brand/mark-512.png`;
 const [lat, lng] = siteConfig.geo.position.split(";");
 
 const address = {
@@ -121,7 +122,7 @@ const jsonLd = {
       alternateName: `${siteConfig.author} James`,
       url: siteConfig.url,
       image: imageUrl,
-      logo: imageUrl,
+      logo: logoUrl,
       email: siteConfig.email,
       description: siteConfig.description,
       priceRange: "₦150,000 - ₦3,000,000+",

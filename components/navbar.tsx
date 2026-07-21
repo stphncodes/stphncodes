@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import type Lenis from "lenis";
@@ -72,11 +73,19 @@ export function Navbar() {
         {/* Brand */}
         <a
           href="#hero"
+          aria-label={`${siteConfig.name} — back to top`}
           className="group flex items-center gap-2 pl-2 font-display text-sm font-semibold tracking-tight"
         >
-          <span className="relative flex h-7 w-7 items-center justify-center rounded-lg bg-primary/15 text-primary">
+          <span className="relative flex h-7 w-7 items-center justify-center">
             <span className="absolute inset-0 animate-pulse-glow rounded-lg bg-primary/20 blur-md" />
-            <span className="relative font-mono text-xs">{"</>"}</span>
+            <Image
+              src="/brand/mark.png"
+              alt=""
+              width={28}
+              height={28}
+              priority
+              className="relative h-7 w-7 object-contain"
+            />
           </span>
           <span className="text-gradient">{siteConfig.name}</span>
         </a>

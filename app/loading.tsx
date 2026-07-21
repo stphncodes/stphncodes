@@ -16,9 +16,14 @@ export default function Loading() {
           <div className="absolute inset-2 animate-spin rounded-full border border-transparent border-b-secondary [animation-duration:2s] [animation-direction:reverse]" />
           {/* Core */}
           <div className="glass-strong relative flex h-16 w-16 items-center justify-center rounded-full">
-            <span className="animate-pulse-glow font-mono text-lg text-primary">
-              {"</>"}
-            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element -- loading.tsx renders before the app shell; keep it dependency-free */}
+            <img
+              src="/brand/mark.png"
+              alt=""
+              width={32}
+              height={32}
+              className="h-8 w-8 animate-pulse-glow object-contain"
+            />
           </div>
         </div>
 
