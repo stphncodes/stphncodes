@@ -10,19 +10,19 @@ import { TextReveal } from "@/components/animations/text-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
 
 const codeLines = [
-  { t: "const", n: " engineer ", o: "= {", c: "" },
-  { t: "  focus:", n: "", o: " ", c: '"AI · web · scale",' },
-  { t: "  loves:", n: "", o: " ", c: '"clean systems",' },
-  { t: "  ships:", n: "", o: " ", c: "true," },
+  { t: "const", n: " studio ", o: "= {", c: "" },
+  { t: "  builds:", n: "", o: " ", c: '"web · ai · automation",' },
+  { t: "  goal:", n: "", o: " ", c: '"presence → revenue",' },
+  { t: "  serves:", n: "", o: " ", c: '"business owners",' },
   { t: "}", n: "", o: "", c: "" },
 ];
 
 const focus = [
+  "Web Development",
   "Agentic AI",
-  "Web Platforms",
   "Automation",
-  "Distributed Systems",
-  "Micro-interactions",
+  "E-commerce",
+  "Lead Capture",
 ];
 
 export function About() {
@@ -34,8 +34,8 @@ export function About() {
       <div className="container relative">
         <SectionHeading
           eyebrow="01 · About"
-          title="Engineer at the edge of AI and the web"
-          description="I build products where machine intelligence meets real users, obsessing over latency, reliability, and interfaces that feel alive."
+          title="More than a website, a system that grows your business"
+          description="I build the websites, AI agents, and automations that help business owners get found, earn trust, and turn visitors into paying customers."
           className="max-w-3xl"
         />
 
@@ -44,20 +44,26 @@ export function About() {
           <Reveal direction="up" className="lg:col-span-7">
             <div className="glass relative h-full overflow-hidden rounded-3xl p-7 sm:p-9">
               <p className="text-lg leading-relaxed text-foreground/90">
-                <TextReveal text="I'm Stephen, a software engineer who turns ambitious ideas into production systems that scale." />
+                <TextReveal text="I'm Stephen. I help business owners build a real online presence and turn it into revenue." />
               </p>
               <p className="mt-5 leading-relaxed text-muted-foreground">
-                My work lives at the intersection of{" "}
-                <span className="text-foreground">web development</span>,{" "}
-                <span className="text-foreground">automation</span>, and{" "}
-                <span className="text-foreground">agentic AI</span>. I care
-                about the whole stack: from AI agents and automated workflows
-                down to the pixels and micro-interactions users actually feel.
+                A great{" "}
+                <span className="text-foreground">website</span> opens the
+                door, it&apos;s how customers find you and decide to trust you.
+                From there, a custom{" "}
+                <span className="text-foreground">AI agent</span> and{" "}
+                <span className="text-foreground">automation</span> compound its
+                value: capturing leads, booking clients, and running the
+                busywork while you sleep.
               </p>
               <p className="mt-5 leading-relaxed text-muted-foreground">
-                When I&apos;m not shipping, I&apos;m exploring distributed
-                systems, language design, and the next wave of agentic tooling,
-                always chasing the line between fast and elegant.
+                Recently I built{" "}
+                <span className="text-foreground">
+                  Toyota Nigeria&apos;s Pre-Owned Cars
+                </span>{" "}
+                marketplace end-to-end, 2,000+ inspected vehicles with search,
+                inspection badges, warranty, and verified history, serving
+                customers right across Nigeria.
               </p>
 
               {/* Focus pills */}
@@ -90,7 +96,7 @@ export function About() {
                     <span className="h-3 w-3 rounded-full bg-yellow-400/80" />
                     <span className="h-3 w-3 rounded-full bg-green-400/80" />
                     <span className="ml-3 text-xs text-muted-foreground">
-                      engineer.ts
+                      studio.ts
                     </span>
                   </div>
                   <pre
@@ -120,10 +126,8 @@ export function About() {
                       <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
                     </span>
                     <span className="text-muted-foreground">
-                      Currently building{" "}
-                      <span className="text-foreground">
-                        Toyota Nigeria Pre-Owned Cars
-                      </span>
+                      Available for new projects, from{" "}
+                      <span className="text-foreground">Nigeria, worldwide</span>
                     </span>
                   </div>
                 </div>

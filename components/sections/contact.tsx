@@ -87,9 +87,9 @@ export function Contact() {
     <section ref={sectionRef} id="contact" className="relative py-28 sm:py-36">
       <div className="container">
         <SectionHeading
-          eyebrow="08 · Contact"
-          title="Let's build something"
-          description="Have a project, a role, or just an idea worth exploring? Open a connection."
+          eyebrow="09 · Contact"
+          title="Let's grow your business"
+          description="Tell me about your business and what you want to build. I'll reply within 48h."
           align="center"
           className="mx-auto"
         />

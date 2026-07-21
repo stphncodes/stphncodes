@@ -31,8 +31,8 @@ export function Footer() {
               {siteConfig.name}
             </a>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              {siteConfig.tagline} Designing and engineering AI-driven products,
-              from prototype to production scale.
+              {siteConfig.tagline} A web, AI &amp; automation studio for
+              business owners in Nigeria and worldwide.
             </p>
             <div className="mt-6 flex items-center gap-3">
               {socialLinks.map((s) => {

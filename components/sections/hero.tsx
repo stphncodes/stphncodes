@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { gsap } from "gsap";
-import { ArrowDown, Sparkles } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 import { siteConfig } from "@/lib/site";
 import { Button } from "@/components/ui/button";
@@ -84,9 +84,25 @@ export function Hero() {
       >
         {/* ── Left: copy ── */}
         <div className="order-2 flex flex-col items-center text-center lg:order-1 lg:items-start lg:text-left">
-          {/* Headline */}
+          {/* Studio eyebrow */}
+          <span
+            data-hero="sub"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 font-mono text-xs text-muted-foreground"
+          >
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
+            </span>
+            Available for new work
+          </span>
+
+          {/* Headline — visible wordmark, with a keyword-rich accessible H1 for SEO */}
           <h1 className="font-display text-[clamp(2.6rem,8vw,6.5rem)] font-bold leading-[0.92] tracking-tight">
-            <span data-hero="line" className="block overflow-hidden">
+            <span className="sr-only">
+              STPHNCODES — web development, AI agents, and automation for
+              business owners in Abuja, Nigeria and worldwide
+            </span>
+            <span data-hero="line" aria-hidden className="block overflow-hidden">
               <span className="hero-word inline-block text-gradient">STPHN</span>
               <span className="hero-word inline-block text-gradient-primary">
                 CODES
@@ -98,13 +114,8 @@ export function Hero() {
             data-hero="sub"
             className="mt-7 max-w-xl text-balance text-base text-muted-foreground sm:text-lg md:text-xl"
           >
-            I&apos;m {siteConfig.author}, a{" "}
-            <span className="font-medium text-foreground">
-              {siteConfig.role}
-            </span>{" "}
-            crafting fast, scalable products, from{" "}
-            <span className="text-foreground">full-stack web</span> to{" "}
-            <span className="text-foreground">automation &amp; agentic AI</span>.
+            I build websites and AI tools that help business owners get{" "}
+            <span className="text-foreground">more customers online</span>.
           </p>
 
           {/* CTAs */}
@@ -114,15 +125,12 @@ export function Hero() {
           >
             <Magnetic>
               <Button asChild size="lg">
-                <a href="#work">
-                  <Sparkles className="size-4" />
-                  View my work
-                </a>
+                <a href="#contact">Start your project</a>
               </Button>
             </Magnetic>
             <Magnetic>
               <Button asChild size="lg" variant="outline">
-                <a href="#contact">Get in touch</a>
+                <a href="#work">See the work</a>
               </Button>
             </Magnetic>
           </div>
