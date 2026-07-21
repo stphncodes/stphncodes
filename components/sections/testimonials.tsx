@@ -40,7 +40,7 @@ export function Testimonials() {
         <SectionHeading
           eyebrow="07 · Testimonials"
           title="What clients say"
-          description="A snapshot of the kind of results clients see. The layout below is ready to swap in genuine feedback."
+          description="Results business owners see when their online presence finally starts working for them."
           className="max-w-2xl"
         />
 

@@ -82,8 +82,8 @@ export function TechStack() {
       <div className="container">
         <SectionHeading
           eyebrow="02 · Stack"
-          title="A toolkit built for scale"
-          description="Languages, frameworks, and platforms I reach for to ship reliable, intelligent products end-to-end."
+          title="Built on tools you can trust"
+          description="The same modern, battle-tested tools behind fast, reliable products, so your site is built to last and ready to scale with you."
           align="center"
           className="mx-auto"
         />

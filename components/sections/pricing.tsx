@@ -20,24 +20,29 @@ function PricingCard({ tier }: { tier: PricingTier }) {
       )}
     >
       {tier.popular && (
-        <>
-          <div className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br from-primary/20 via-secondary/10 to-transparent" />
-          <span className="absolute right-5 top-5 inline-flex items-center rounded-full border border-primary/30 bg-primary/15 px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-primary">
-            Most Popular
-          </span>
-        </>
+        <div className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br from-primary/20 via-secondary/10 to-transparent" />
       )}
 
       <div className="relative flex h-full flex-col">
+        {tier.popular && (
+          <span className="mb-4 inline-flex w-fit items-center rounded-full border border-primary/30 bg-primary/15 px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-primary">
+            Most Popular
+          </span>
+        )}
         <h3 className="font-display text-lg font-semibold tracking-tight">
           {tier.name}
         </h3>
         <p className="mt-1 text-sm text-muted-foreground">{tier.summary}</p>
 
-        <div className="mt-6 flex items-end gap-1">
+        <div className="mt-6 flex flex-wrap items-end gap-x-2 gap-y-1">
           <span className="font-display text-4xl font-bold text-gradient-primary">
             {tier.price}
           </span>
+          {tier.priceUsd && (
+            <span className="pb-1 font-mono text-sm text-muted-foreground">
+              {tier.priceUsd}
+            </span>
+          )}
         </div>
 
         <ul className="mt-6 flex-1 space-y-3 border-t border-white/10 pt-6">
@@ -64,6 +69,11 @@ function PricingCard({ tier }: { tier: PricingTier }) {
               <a href={tier.cta.href}>{tier.cta.label}</a>
             </Button>
           </Magnetic>
+          {tier.note && (
+            <p className="mt-3 text-center text-xs text-muted-foreground">
+              {tier.note}
+            </p>
+          )}
         </div>
       </div>
     </div>
@@ -79,13 +89,13 @@ export function Pricing() {
       <div className="container relative">
         <SectionHeading
           eyebrow="06 · Pricing"
-          title="Simple, transparent pricing"
-          description="Clear scope, fixed starting points, no surprises. Need something custom? The Premium tier scales with you."
+          title="Pricing built around outcomes"
+          description="Naira-first, with a USD equivalent for international clients. Clear scope, fixed starting points, no surprises. E-commerce, marketplaces, and standalone AI or automation are quoted to scope."
           align="center"
           className="mx-auto"
         />
 
-        <div className="mx-auto mt-16 grid max-w-5xl items-center gap-6 md:grid-cols-3">
+        <div className="mx-auto mt-16 grid max-w-md gap-6 lg:max-w-5xl lg:grid-cols-3">
           {pricing.map((tier, i) => (
             <Reveal key={tier.name} direction="up" delay={i * 0.08} className="h-full">
               <PricingCard tier={tier} />

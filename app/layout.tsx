@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 
-import { siteConfig } from "@/lib/site";
+import { siteConfig, socialLinks } from "@/lib/site";
+import { services } from "@/lib/data";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { Cursor } from "@/components/cursor";
 import "./globals.css";
@@ -27,8 +28,8 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} · ${siteConfig.author}, ${siteConfig.role}`,
-    template: `%s · ${siteConfig.name}`,
+    default: "Websites, AI Agents & Automation in Nigeria | STPHNCODES",
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [...siteConfig.keywords],
@@ -48,13 +49,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NG",
     url: siteConfig.url,
-    title: `${siteConfig.name} · ${siteConfig.author}`,
+    title: "Websites, AI Agents & Automation in Nigeria | STPHNCODES",
     description: siteConfig.description,
     siteName: siteConfig.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} · ${siteConfig.author}`,
+    title: "Websites, AI Agents & Automation in Nigeria | STPHNCODES",
     description: siteConfig.description,
     creator: "@stphncodes",
   },
@@ -83,38 +84,110 @@ export const viewport: Viewport = {
   colorScheme: "dark",
 };
 
+// Social profiles Google can use to corroborate identity (E-E-A-T).
+const sameAs = socialLinks
+  .filter((s) => s.href.startsWith("http"))
+  .map((s) => s.href);
+
+const businessId = `${siteConfig.url}/#business`;
+const personId = `${siteConfig.url}/#stephen`;
+const websiteId = `${siteConfig.url}/#website`;
+const imageUrl = `${siteConfig.url}/opengraph-image`;
+const [lat, lng] = siteConfig.geo.position.split(";");
+
+const address = {
+  "@type": "PostalAddress",
+  addressLocality: siteConfig.geo.locality,
+  addressRegion: siteConfig.geo.region,
+  addressCountry: siteConfig.geo.countryCode,
+};
+
+const areaServed = [
+  { "@type": "Country", name: "Nigeria" },
+  { "@type": "AdministrativeArea", name: "Abuja (FCT)" },
+  "Worldwide",
+];
+
+// Schema graph: the studio (ProfessionalService) for service/local ranking,
+// the founder (Person), and the WebSite — cross-linked by @id.
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: `${siteConfig.author} James`,
-  alternateName: siteConfig.name,
-  url: siteConfig.url,
-  email: siteConfig.email,
-  jobTitle: siteConfig.role,
-  description: siteConfig.description,
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: siteConfig.geo.locality,
-    addressRegion: siteConfig.geo.region,
-    addressCountry: siteConfig.geo.countryCode,
-  },
-  // Anchored in Nigeria, open to clients worldwide.
-  homeLocation: {
-    "@type": "Place",
-    name: siteConfig.location,
-  },
-  areaServed: [
-    { "@type": "Country", name: "Nigeria" },
-    "Worldwide",
-  ],
-  knowsAbout: [
-    "Full-Stack Web Development",
-    "Automation",
-    "Agentic AI",
-    "Web Performance",
-    "Next.js",
-    "React",
-    "Python",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": businessId,
+      name: siteConfig.name,
+      alternateName: `${siteConfig.author} James`,
+      url: siteConfig.url,
+      image: imageUrl,
+      logo: imageUrl,
+      email: siteConfig.email,
+      description: siteConfig.description,
+      priceRange: "₦150,000 - ₦3,000,000+",
+      currenciesAccepted: "NGN, USD",
+      address,
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: lat,
+        longitude: lng,
+      },
+      areaServed,
+      founder: { "@id": personId },
+      sameAs,
+      knowsAbout: [
+        "Web Development",
+        "Business Websites",
+        "E-commerce Development",
+        "Agentic AI",
+        "AI Agents & Chatbots",
+        "Workflow Automation",
+        "CRM Integration",
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Services",
+        itemListElement: services.map((service) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: service.title,
+            description: service.tagline,
+            areaServed,
+            provider: { "@id": businessId },
+          },
+        })),
+      },
+    },
+    {
+      "@type": "Person",
+      "@id": personId,
+      name: `${siteConfig.author} James`,
+      alternateName: siteConfig.name,
+      url: siteConfig.url,
+      email: siteConfig.email,
+      jobTitle: "Web, AI & Automation Developer",
+      description: siteConfig.description,
+      address,
+      worksFor: { "@id": businessId },
+      sameAs,
+      knowsAbout: [
+        "Web Development",
+        "Agentic AI",
+        "Workflow Automation",
+        "Next.js",
+        "React",
+        "Claude API",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      url: siteConfig.url,
+      name: siteConfig.name,
+      description: siteConfig.description,
+      publisher: { "@id": businessId },
+      inLanguage: "en",
+    },
   ],
 };
 

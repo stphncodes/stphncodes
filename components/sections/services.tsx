@@ -1,6 +1,6 @@
 "use client";
 
-import { Bot, Check, Globe, Layers } from "lucide-react";
+import { Bot, Check, Globe, Layers, Workflow } from "lucide-react";
 
 import { services, type Service } from "@/lib/data";
 import { cn } from "@/lib/utils";
@@ -13,6 +13,7 @@ const iconMap = {
   globe: Globe,
   bot: Bot,
   layers: Layers,
+  workflow: Workflow,
 } as const;
 
 function ServiceCard({ service }: { service: Service }) {
@@ -43,7 +44,7 @@ function ServiceCard({ service }: { service: Service }) {
             <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-primary transition-colors duration-300 group-hover:border-primary/40">
               <Icon className="size-5" />
             </span>
-            {service.featured && <Badge>Best value</Badge>}
+            {service.featured && <Badge>Best ROI</Badge>}
           </div>
 
           <h3 className="mt-6 font-display text-2xl font-semibold tracking-tight">
@@ -80,12 +81,12 @@ function ServiceCard({ service }: { service: Service }) {
 
 export function Services() {
   return (
-    <section id="offer" className="relative py-28 sm:py-36">
+    <section id="services" className="relative py-28 sm:py-36">
       <div className="container">
         <SectionHeading
-          eyebrow="05 · What I offer"
-          title="Services built to ship"
-          description="From a polished website to a custom AI agent. Pick a lane, or take the full package and let the two work together."
+          eyebrow="05 · Services"
+          title="Three ways I grow your business"
+          description="Your website opens the door. A custom AI agent and automation compound its value, capturing leads, booking clients, and running the busywork on autopilot."
           className="max-w-2xl"
         />
 
