@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowUp, Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 import { navLinks, siteConfig, socialLinks } from "@/lib/site";
@@ -26,9 +27,17 @@ export function Footer() {
           <div className="max-w-sm">
             <a
               href="#hero"
-              className="font-display text-2xl font-bold tracking-tight text-gradient"
+              aria-label={`${siteConfig.name} — back to top`}
+              className="inline-block"
             >
-              {siteConfig.name}
+              <Image
+                src="/brand/logo.png"
+                alt={siteConfig.name}
+                width={1200}
+                height={387}
+                sizes="260px"
+                className="h-auto w-[260px] max-w-full"
+              />
             </a>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               {siteConfig.tagline} A web, AI &amp; automation studio for

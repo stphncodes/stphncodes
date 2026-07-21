@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import {
   AnimatePresence,
   motion,
@@ -125,9 +126,15 @@ export function ChatWidget() {
             {/* Header */}
             <div className="flex items-center justify-between gap-3 border-b border-foreground/10 bg-foreground/[0.03] px-4 py-3">
               <div className="flex items-center gap-3">
-                <span className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-primary/15 text-primary">
+                <span className="relative flex h-9 w-9 items-center justify-center">
                   <span className="absolute inset-0 animate-pulse-glow rounded-lg bg-primary/20 blur-md" />
-                  <span className="relative font-mono text-xs">{"</>"}</span>
+                  <Image
+                    src="/brand/mark.png"
+                    alt=""
+                    width={36}
+                    height={36}
+                    className="relative h-8 w-8 object-contain"
+                  />
                 </span>
                 <div className="leading-tight">
                   <p className="font-display text-sm font-semibold tracking-tight">
