@@ -1,10 +1,10 @@
 /**
- * Chat data + bot logic for the floating chat widget.
+ * Chat types + client for the floating chat widget.
  *
- * This module is intentionally the ONLY place the "bot" lives. The widget UI
- * (components/chat/chat-widget.tsx) only ever calls `getBotResponse(message)`
- * and renders the result — so wiring in a real AI later is a change here, not
- * in the UI.
+ * This module is the ONLY place the widget talks to the outside world. The UI
+ * (components/chat/chat-widget.tsx) calls `streamBotResponse` and renders what
+ * it receives — the model, prompt, and guardrails all live server-side in
+ * `app/api/chat/route.ts` and `lib/chat-context.ts`.
  */
 
 export type ChatRole = "user" | "bot";
@@ -21,21 +21,70 @@ export interface ChatMessage {
 export const WELCOME_MESSAGE =
   "Hi! 👋 I'm the STPHNCODES assistant. Ask me about websites, AI agents, or automation — or tell me what you're building.";
 
-// ---------------------------------------------------------------------------
-// TODO: replace with actual AI call.
-//
-// Swap the body below for a real request (e.g. `fetch('/api/chat', ...)` backed
-// by the Claude API). Keep this signature exactly —
-//   (message: string) => Promise<string>
-// — and the widget will keep working unchanged (it already handles the async
-// pending state / typing indicator and errors).
-// ---------------------------------------------------------------------------
-export async function getBotResponse(message: string): Promise<string> {
-  // `message` is unused for now; it'll be forwarded to the model later.
-  void message;
+/** Shown when the request fails before any text arrives. */
+export const FALLBACK_ERROR =
+  "Sorry, I couldn't reach the assistant just now. Please try again, or email stphncodes@gmail.com.";
 
-  // Simulated "thinking" delay so the typing indicator is visible end-to-end.
-  await new Promise((resolve) => setTimeout(resolve, 900));
+/** Matches the server's per-message cap in `app/api/chat/route.ts`. */
+export const MAX_MESSAGE_CHARS = 2000;
 
-  return "Thanks for your message! (AI responses coming soon)";
+/**
+ * Streams a reply from `/api/chat`, invoking `onDelta` with each chunk of text
+ * as it arrives.
+ *
+ * Resolves once the reply is complete. Rejects if the request fails *before*
+ * any text was streamed — the route is built so that case always comes back as
+ * a real HTTP error with a JSON body, never as a truncated stream. Once text
+ * has started flowing, a mid-stream failure simply ends early and keeps what
+ * was received.
+ *
+ * @param history  Full visible conversation. The server trims it, drops the
+ *                 leading welcome message, and enforces its own limits.
+ * @param onDelta  Called with each incremental chunk of reply text.
+ * @param signal   Abort to cancel in flight (e.g. the visitor closed the panel).
+ */
+export async function streamBotResponse(
+  history: ChatMessage[],
+  onDelta: (delta: string) => void,
+  signal?: AbortSignal
+): Promise<void> {
+  const response = await fetch("/api/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    signal,
+    body: JSON.stringify({
+      messages: history.map((m) => ({
+        role: m.role === "bot" ? "assistant" : "user",
+        content: m.content,
+      })),
+    }),
+  });
+
+  if (!response.ok || !response.body) {
+    let message = FALLBACK_ERROR;
+    try {
+      const data = (await response.json()) as { error?: string };
+      if (data?.error) message = data.error;
+    } catch {
+      // Non-JSON error body — keep the generic message.
+    }
+    throw new Error(message);
+  }
+
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+
+  try {
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      // `stream: true` keeps multi-byte characters intact across chunk edges.
+      const text = decoder.decode(value, { stream: true });
+      if (text) onDelta(text);
+    }
+    const tail = decoder.decode();
+    if (tail) onDelta(tail);
+  } finally {
+    reader.releaseLock();
+  }
 }
