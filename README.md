@@ -4,17 +4,17 @@
 
 ### Software Engineer · Full-Stack Developer · Cloud & DevOps
 
-Building modern software and the infrastructure behind it.
+I build modern software and the infrastructure behind it.
 
-[![Website](https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://stphncode.vercel.app/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/stphncodes/)
-[![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/stphncodes)
+[Website](https://stphncode.vercel.app/) ·
+[LinkedIn](https://www.linkedin.com/in/stphncodes/) ·
+[X](https://x.com/stphncodes)
 
 </div>
 
 ---
 
-## 👋 About Me
+## About
 
 I'm a **Software Engineer** focused on building practical, scalable, and
 user-friendly digital products.
@@ -22,65 +22,112 @@ user-friendly digital products.
 I work across the full stack — from frontend interfaces and backend services
 to databases, APIs, deployment, and infrastructure.
 
-I'm also deepening my expertise in **Cloud & DevOps**, with a focus on Linux,
-Docker, CI/CD, automation, and Microsoft Azure.
+Most of what I build lives on the web, using technologies like **TypeScript,
+React, Next.js, and Node.js**.
 
-I enjoy turning ideas into working software and continuously improving how
-that software is built, deployed, and maintained.
-
----
-
-## 🚀 What I Do
-
-- Build full-stack web applications
-- Design and develop backend APIs and services
-- Build modern and responsive frontend experiences
-- Work with databases and cloud services
-- Containerize and deploy applications
-- Automate development and delivery workflows
-- Explore cloud infrastructure and DevOps practices
-- Continuously learn, experiment, and build
+I'm also going deeper into **Cloud & DevOps**, exploring how software is
+deployed, automated, operated, and made reliable.
 
 ---
 
-## 🛠️ Tech Stack
+## What I Work On
+
+- Full-stack web applications
+- Modern frontend experiences
+- Backend APIs and services
+- Databases and data-driven applications
+- Cloud-based applications
+- Containerized deployments
+- CI/CD and automation
+- Infrastructure and DevOps
+- Technical experiments and open-source projects
+
+---
+
+## Tech Stack
 
 ### Frontend
 
-![React](https://skillicons.dev/icons?i=react)
-![Next.js](https://skillicons.dev/icons?i=nextjs)
-![TypeScript](https://skillicons.dev/icons?i=typescript)
-![JavaScript](https://skillicons.dev/icons?i=javascript)
-![Tailwind](https://skillicons.dev/icons?i=tailwind)
+`React` · `Next.js` · `TypeScript` · `JavaScript` · `Tailwind CSS`
 
-### Backend & Database
+### Backend
 
-![Node.js](https://skillicons.dev/icons?i=nodejs)
-![Supabase](https://skillicons.dev/icons?i=supabase)
-![PostgreSQL](https://skillicons.dev/icons?i=postgres)
+`Node.js` · `Supabase` · `PostgreSQL` · `REST APIs`
 
 ### Cloud & DevOps
 
-![Azure](https://skillicons.dev/icons?i=azure)
-![Linux](https://skillicons.dev/icons?i=linux)
-![Docker](https://skillicons.dev/icons?i=docker)
-![Git](https://skillicons.dev/icons?i=git)
-![GitHub Actions](https://skillicons.dev/icons?i=githubactions)
-![Terraform](https://skillicons.dev/icons?i=terraform)
+`Azure` · `Linux` · `Docker` · `Git` · `CI/CD`
+
+### Currently Exploring
+
+`Terraform` · `Kubernetes` · `Cloud Infrastructure` · `Automation`
 
 ---
 
-## 📌 What I'm Currently Exploring
+## What I'm Building
 
-```text
-Cloud Infrastructure
-      ↓
-DevOps & Automation
-      ↓
-Containerization
-      ↓
-CI/CD
-      ↓
-Infrastructure as Code
-      ↓
-Microsoft Azure
+I like working on projects that sit somewhere between **software,
+infrastructure, and real-world problems**.
+
+Some of my current work includes:
+
+- Web applications
+- Developer tools
+- Digital products
+- Cloud and infrastructure experiments
+- Automation projects
+
+See what I'm currently building on my website:
+
+**[stphncode.vercel.app](https://stphncode.vercel.app/)**
+
+---
+
+## Engineering Philosophy
+
+> Build things that work.
+>
+> Understand how they work.
+>
+> Make them better.
+
+Good software isn't just about writing code.
+
+It's about understanding the entire system — how it's designed, built,
+tested, deployed, and maintained.
+
+---
+
+## Currently Learning
+
+I'm going deeper into:
+
+- Cloud infrastructure
+- DevOps
+- Microsoft Azure
+- Linux
+- Docker
+- CI/CD
+- Infrastructure as Code
+- Kubernetes
+- Automation
+
+---
+
+## Writing & Learning
+
+I document things I'm learning through projects, experiments, notes, and
+technical writing.
+
+I believe the best way to understand something is to **build it, break it,
+fix it, and explain what you learned.**
+
+---
+
+<div align="center">
+
+### Build. Learn. Improve. Repeat.
+
+**Stephen James · @stphncodes**
+
+</div>
