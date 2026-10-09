@@ -8,7 +8,7 @@ I like taking ideas from **concept → code → production**.
 
 Currently focused on becoming a better software engineer, building real products, and using AI to work faster without losing the fundamentals.
 
-**[Website](https://stphncode.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/stphncodes/) · [X](https://x.com/stphncodes)**
+**[Website](https://stphncod.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/stphncodes/) · [X](https://x.com/stphncodes)**
 
 ---
 
